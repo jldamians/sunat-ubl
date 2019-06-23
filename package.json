@@ -25,5 +25,8 @@
   "bugs": {
     "url": "https://github.com/jldamians/sunat-ubl/issues"
   },
-  "homepage": "https://github.com/jldamians/sunat-ubl#readme"
+  "homepage": "https://github.com/jldamians/sunat-ubl#readme",
+  "dependencies": {
+    "xmlbuilder": "^13.0.2"
+  }
 }
