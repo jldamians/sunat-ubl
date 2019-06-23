@@ -1,0 +1,29 @@
+{
+  "name": "sunat-ubl",
+  "version": "1.0.0",
+  "description": "Estructuras UBL para CPE",
+  "main": "./lib/index.js",
+  "directories": {
+    "example": "example",
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jldamians/sunat-ubl.git"
+  },
+  "keywords": [
+    "CPE",
+    "UBL",
+    "UBL 2.1"
+  ],
+  "author": "jldamians <jlds161089@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jldamians/sunat-ubl/issues"
+  },
+  "homepage": "https://github.com/jldamians/sunat-ubl#readme"
+}
