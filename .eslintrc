@@ -8,11 +8,37 @@
     "es6": true
   },
   "rules": {
-    # permite usar variables con _
+    # disallow dangling underscores in identifiers
     "no-underscore-dangle": 0,
-    # obliga a definir llaves en if/else
-    "curly": [2, "all"],
-    # obliga a usar punto y coma
-    "semi": [2, "always"]
+
+    # enforce consistent brace style for all control statements
+    "curly": ["error", "all"],
+
+    # require or disallow semicolons instead of ASI
+    "semi": ["error", "always"],
+
+    # enforce consistent spacing before and after semicolons
+    "semi-spacing": ["error", {"before": false, "after": true}],
+
+    # enforce location of semicolons
+    "semi-style": ["error", "last"],
+
+    # disallow the use of undeclared variables unless mentioned in /*global */ comments
+    "no-undef": 2,
+
+    # disallow initializing variables to undefined
+    "no-undef-init": 2,
+
+    # disallow the use of undefined as an identifier
+    "no-undefined": 2,
+
+    # disallow unused variables
+    "no-unused-vars": 2,
+
+    # disallow the use of variables before they are defined
+    "no-use-before-define": 2,
+
+    # enforce comparing typeof expressions against valid strings
+    "valid-typeof": 2
   }
 }
