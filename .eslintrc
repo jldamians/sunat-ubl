@@ -39,6 +39,9 @@
     "no-use-before-define": 2,
 
     # enforce comparing typeof expressions against valid strings
-    "valid-typeof": 2
+    "valid-typeof": 2,
+
+    # disallow the use of debugger
+    "no-debugger": 1
   }
 }
