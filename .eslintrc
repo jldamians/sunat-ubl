@@ -1,5 +1,4 @@
 {
-  "extends": "eslint:recommended",
   "parserOptions": {
     "ecmaVersion": 6
   },
@@ -8,4 +7,12 @@
     "mocha": true,
     "es6": true
   },
+  "rules": {
+    # permite usar variables con _
+    "no-underscore-dangle": 0,
+    # obliga a definir llaves en if/else
+    "curly": [2, "all"],
+    # obliga a usar punto y coma
+    "semi": [2, "always"]
+  }
 }
