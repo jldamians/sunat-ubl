@@ -27,6 +27,10 @@
   },
   "homepage": "https://github.com/jldamians/sunat-ubl#readme",
   "dependencies": {
+    "numeral": "^2.0.6",
     "xmlbuilder": "^13.0.2"
+  },
+  "devDependencies": {
+    "eslint": "^6.0.0"
   }
 }
