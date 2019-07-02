@@ -28,6 +28,7 @@
   "homepage": "https://github.com/jldamians/sunat-ubl#readme",
   "dependencies": {
     "numeral": "^2.0.6",
+    "require-dir": "^1.2.0",
     "xmlbuilder": "^13.0.2"
   },
   "devDependencies": {
