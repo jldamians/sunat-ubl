@@ -45,6 +45,27 @@
     "no-debugger": 1,
 
     # disallow null comparisons without type-checking operators
-    "no-eq-null": 2
+    "no-eq-null": 2,
+
+    # require require() calls to be placed at top-level module scope
+    "global-require": 2,
+
+    # enforce the consistent use of either function declarations or expressions
+    "func-style": ["error", "declaration"],
+
+    # enforce placing object properties on separate lines
+    "object-property-newline": 2,
+
+    # require or disallow trailing commas
+    comma-dangle: ["error", "always-multiline"],
+
+    # require or disallow initialization in variable declarations
+    "init-declarations": ["error", "never", { "ignoreForLoopInit": true }],
+
+    # disallow deleting variables
+    "no-delete-var": 2,
+
+    # require let or const instead of var
+    "no-var": 2
   }
 }
