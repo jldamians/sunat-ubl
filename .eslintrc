@@ -42,6 +42,9 @@
     "valid-typeof": 2,
 
     # disallow the use of debugger
-    "no-debugger": 1
+    "no-debugger": 1,
+
+    # disallow null comparisons without type-checking operators
+    "no-eq-null": 2
   }
 }
