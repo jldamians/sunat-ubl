@@ -1,7 +1,7 @@
 
-# New Document# SUNAT - UBL 2.1
+## New Document# SUNAT - UBL 2.1
 
-## Nomenclatura
+### Nomenclatura
 
 Tipo de campo   | Descripción
 :-------------- | :----------
@@ -24,7 +24,7 @@ Formato de campo  | Descripción
 `F###`              | `inicia con la letra F seguida de 3 números`
 `YYYY-MM-DD`        | `YYYY=año, MM=mes y DD=día`
 
-###- Tabla de campos "emisor"
+#### Tabla de campos "emisor"
 
 Campo | Descripción | Tipo y longitud | Formato | Habilitado / Obligatorio Factura | Habilitado / Obligatorio Boleta | Habilitado / Obligatorio Notas
 :---- | :---------- | :-------------- | :------ | :------ | :----- | :----
