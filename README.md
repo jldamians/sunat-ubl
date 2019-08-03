@@ -1,3 +1,4 @@
+
 # SUNAT - UBL 2.1
 
 ## Nomenclatura
@@ -26,7 +27,7 @@ Formato de campo  | Descripción
 ###  Tabla de campos "emisor"
 
 Campo | Descripción | Tipo y longitud | Formato | Habilitado / Obligatorio Factura | Habilitado / Obligatorio Boleta | Habilitado / Obligatorio Notas
-:---- | :---------- | :-------------- | :------ | :------ | :----- | :----
+:---- | :---------- | :-------------- | :------ | :------------------------------- | :------------------------------ | :-----------------------------
 ***`tipoDocumento`*** | **_`Tipo de documento de indentidad`_** <br><br> `Consultar catálogo nro. 06 (Códigos de Tipo de Documento de Identidad) - Anexo 8 SUNAT` <br><br> `Se deberá emplear el código `**`6 - Registro Único de Contribuyente (RUC)`** | - | - | `[x] Habilitado [x] Obligatorio` | `[x] Habilitado` <br> `[x] Obligatorio` | `[x] Habilitado` <br> `[x] Obligatorio`
 ***`numeroDocumento`*** | **_`Número de documento de identidad`_** <br><br> `Número de Registro Único de Contribuyente (RUC)` | - | - | [x] Habilitado [x] Obligatorio | [x] Habilitado [x] Obligatorio | [x] Habilitado [x] Obligatorio
 ***`nombre`*** | **_`Apellidos y nombres,`_**`denominación o razón social` | - | - | [x] Habilitado [x] Obligatorio | [x] Habilitado [x] Obligatorio | [x] Habilitado [x] Obligatorio
@@ -39,3 +40,18 @@ Campo | Descripción | Tipo y longitud | Formato | Habilitado / Obligatorio Fact
 ***`direccion`*** | **_`Dirección,`_** `completa y detallada del domicilio fiscal` | - | - | [x] Habilitado [ ] Obligatorio | [x] Habilitado [ ] Obligatorio | [x] Habilitado [ ] Obligatorio
 ***`urbanizacion`*** | **_`Urbanización,`_**`del domicilio fiscal` | - | - | [x] Habilitado [ ] Obligatorio | [x] Habilitado [ ] Obligatorio | [x] Habilitado [ ] Obligatorio
 ***`codPais`*** | **_`Código de país,`_**`del domicilio fiscal` | - | - | [x] Habilitado [ ] Obligatorio | [x] Habilitado [ ] Obligatorio | [x] Habilitado [ ] Obligatorio
+
+###  Tabla de campos "receptor"
+
+Campo | Descripción | Tipo y longitud | Formato | Habilitado / Obligatorio Factura | Habilitado / Obligatorio Boleta | Habilitado / Obligatorio Notas
+:---- | :---------- | :-------------- | :------ | :------------------------------- | :------------------------------ | :-----------------------------
+***`tipoDocumento`*** | **_`Tipo de documento de indentidad`_** <br><br> `Consultar catálogo nro. 06 (Códigos de Tipo de Documento de Identidad) - Anexo 8 SUNAT` <br><br> `Se deberá emplear el código `**`6 - Registro Único de Contribuyente (RUC)`** | - | - | `[x] Habilitado [x] Obligatorio` | `[x] Habilitado` <br> `[x] Obligatorio` | `[x] Habilitado` <br> `[x] Obligatorio`
+***`numeroDocumento`*** | **_`Número de documento de identidad`_** <br><br> `Número de Registro Único de Contribuyente (RUC)` | - | - | [x] Habilitado [x] Obligatorio | [x] Habilitado [x] Obligatorio | [x] Habilitado [x] Obligatorio
+***`nombre`*** | **_`Apellidos y nombres,`_**`denominación o razón social` | - | - | [x] Habilitado [x] Obligatorio | [x] Habilitado [x] Obligatorio | [x] Habilitado [x] Obligatorio
+***`codUbigeo`*** | **_`Código de UBIGEO`_** <br><br> `Consultar catálogo nro. 13 (Códigos de Ubicación Geográfica) - Anexo 8 SUNAT` | - | - | [x] Habilitado [ ] Obligatorio | [x] Habilitado [ ] Obligatorio | [x] Habilitado [ ] Obligatorio
+***`departamento`*** | **_`Departamento`_** | - | - | [x] Habilitado [ ] Obligatorio | [x] Habilitado [ ] Obligatorio | [x] Habilitado [ ] Obligatorio
+***`provincia`*** | **_`Provincia`_** | - | - | [x] Habilitado [ ] Obligatorio | [x] Habilitado [ ] Obligatorio | [x] Habilitado [ ] Obligatorio
+***`distrito`*** | **_`Distrito`_** | - | - | [x] Habilitado [ ] Obligatorio | [x] Habilitado [ ] Obligatorio | [x] Habilitado [ ] Obligatorio
+***`direccion`*** | **_`Dirección,`_** `completa y detallada` | - | - | [x] Habilitado [ ] Obligatorio | [x] Habilitado [ ] Obligatorio | [x] Habilitado [ ] Obligatorio
+***`urbanizacion`*** | **_`Urbanización`_** | - | - | [x] Habilitado [ ] Obligatorio | [x] Habilitado [ ] Obligatorio | [x] Habilitado [ ] Obligatorio
+***`codPais`*** | **_`Código de país`_** | - | - | [x] Habilitado [ ] Obligatorio | [x] Habilitado [ ] Obligatorio | [x] Habilitado [ ] Obligatorio
