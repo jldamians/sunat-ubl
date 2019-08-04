@@ -55,3 +55,13 @@ Campo | Descripción | Tipo y longitud | Formato | Habilitado / Obligatorio Fact
 ***`direccion`*** | **_`Dirección,`_** `completa y detallada` | - | - | [x] Habilitado [ ] Obligatorio | [x] Habilitado [ ] Obligatorio | [x] Habilitado [ ] Obligatorio
 ***`urbanizacion`*** | **_`Urbanización`_** | - | - | [x] Habilitado [ ] Obligatorio | [x] Habilitado [ ] Obligatorio | [x] Habilitado [ ] Obligatorio
 ***`codPais`*** | **_`Código de país`_** | - | - | [x] Habilitado [ ] Obligatorio | [x] Habilitado [ ] Obligatorio | [x] Habilitado [ ] Obligatorio
+
+###  Tabla de campos "tributo"
+
+Campo | Descripción | Tipo y longitud | Formato | Habilitado / Obligatorio Factura | Habilitado / Obligatorio Boleta | Habilitado / Obligatorio Notas
+:---- | :---------- | :-------------- | :------ | :------------------------------- | :------------------------------ | :-----------------------------
+***`mntTotal`*** | **_`Monto total de tributos`_**<br><br>`Se deberá consignar la sumatoria de los montos de los siguientes`**_`Tipos de Tributos:`_**<br><br>`Consultar catálogo nro. 05 (Códigos de Tipos de Tributos y Otros Conceptos) - Anexo 8 SUNAT`<br><br>**`1000`**_`- Impuestos General a las Ventas (IGV)`_<br>**`1016`**_`- Impuesto a la Venta Arroz Pilado (IVAP)`_<br>**`2000`**_`- Impuesto Selectivo al Consumo (ISC)`_<br>**`7152`**_`- Impuesto al Consumo de las Bolsas de Plástico (ICBPER)`_<br>**`9999`**_`- Otros Tributos`_ | - | - | `[x] Habilitado`<br>`[x]Obligatorio` | `[x] Habilitado`<br>`[x] Obligatorio` | `[x] Habilitado`<br>`[x] Obligatorio`
+**_`conceptos`_** | - | - | - | `[x] Habilitado`<br>`[x]Obligatorio` | `[x] Habilitado`<br>`[x] Obligatorio` | `[x] Habilitado`<br>`[x] Obligatorio`
+**_`_.codigo`_** | _**`Código de tributo`**_<br><br>`Consultar catálogo nro. 05 (Códigos de Tipos de Tributos y Otros Conceptos) - Anexo 8 SUNAT` | - | - | `[x] Habilitado`<br>`[x]Obligatorio` | `[x] Habilitado`<br>`[x] Obligatorio` | `[x] Habilitado`<br>`[x] Obligatorio`
+**_`_.base`_** | _**`Total valor de venta`**_<br><br>`Si el`_**`Código de Tributo`**_`es`_**`"7152" (ICBPER),`**_`se deberá consignar`_**`0.00`**_ | - | - | `[x] Habilitado`<br>`[x]Obligatorio` | `[x] Habilitado`<br>`[x] Obligatorio` | `[x] Habilitado`<br>`[x] Obligatorio`
+**_`_.monto`_** | _**`Importe del tributo`**_ | - | - | `[x] Habilitado`<br>`[x]Obligatorio` | `[x] Habilitado`<br>`[x] Obligatorio` | `[x] Habilitado`<br>`[x] Obligatorio`
