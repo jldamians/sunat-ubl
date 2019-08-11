@@ -1,3 +1,4 @@
+
 # SUNAT - UBL 2.1
 
 ## Nomenclatura
@@ -85,3 +86,6 @@ Campo | Descripción | Tipo y longitud | Formato | Habilitado / Obligatorio Fact
 **_`[{impuestos}].base`_** | _**`Monto base del impuesto`**_<br><br>`Si se utiliza el campo`**`tipoAfectacionIcbper,`**`se deberá consignar la`_**`cantidad de bolsas de plástico`**_`adquiridas por el consumidor del bien o servicio` | - | - | `[X] Habilitado`<br>`[X] Obligatorio` | `[X] Habilitado`<br>`[X] Obligatorio` | `[X] Habilitado`<br>`[X] Obligatorio`
 **_`[{impuestos}].tasa`_** | _**`Tasa del impuesto`**_<br><br>`Si se utiliza el campo`**`tipoAfectacionIcbper,`**`se deberá consignar uno de los siguientes valores:`<br>_**`Año 2019 -> 0.10`<br>`Año 2020 -> 0.20`<br>`Año 2021 -> 0.30`<br>`Año 2022 -> 0.40`<br>`Años sigs. -> 0.50`**_ | - | - | `[X] Habilitado`<br>`[X] Obligatorio` | `[X] Habilitado`<br>`[X] Obligatorio` | `[X] Habilitado`<br>`[X] Obligatorio`
 **_`[{impuestos}].monto`_** | _**`Monto del impuesto`**_ | - | - | `[X] Habilitado`<br>`[X] Obligatorio` | `[X] Habilitado`<br>`[X] Obligatorio` | `[X] Habilitado`<br>`[X] Obligatorio`
+**_`conceptos`_** | *`[{ codigo, valor }]`* | - | - | `[X] Habilitado`<br>`[ ] Obligatorio` | `[X] Habilitado`<br>`[ ] Obligatorio` | `[X] Habilitado`<br>`[ ] Obligatorio`
+**_`[{conceptos}].codigo`_** | _**`Código del concepto tributario,`**`por ítem`_<br><br>`Consultar catálogo nro. 55 (Códigos de Identificación del Concepto Tributario) - Anexo 8 SUNAT` | - | - | `[X] Habilitado`<br>`[X] Obligatorio` | `[X] Habilitado`<br>`[X] Obligatorio` | `[X] Habilitado`<br>`[X] Obligatorio`
+**_`[{conceptos}].valor`_** | _**`Valor del conceptor tributario`**_ | - | - | `[X] Habilitado`<br>`[X] Obligatorio` | `[X] Habilitado`<br>`[X] Obligatorio` | `[X] Habilitado`<br>`[X] Obligatorio`
