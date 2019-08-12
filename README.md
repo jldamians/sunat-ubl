@@ -1,4 +1,5 @@
 
+
 # SUNAT - UBL 2.1
 
 ## Nomenclatura
@@ -24,7 +25,7 @@ Formato de campo | Descripción
 `F###`           | `Inicia con la letra F seguida de 3 números`
 `YYYY-MM-DD`     | `YYYY=año, MM=mes y DD=día`
 
-###  Tabla de campos "emisor"
+###  Tabla de campos "{ emisor }"
 
 Campo | Descripción | Tipo y longitud | Formato | Habilitado / Obligatorio Factura | Habilitado / Obligatorio Boleta | Habilitado / Obligatorio Notas
 :- | :- | :- | :- | :- | :- | :-
@@ -41,7 +42,7 @@ Campo | Descripción | Tipo y longitud | Formato | Habilitado / Obligatorio Fact
 ***`urbanizacion`*** | **_`Urbanización,`_**`del domicilio fiscal` | - | - | `[X] Habilitado`<br>`[ ] Obligatorio` | `[X] Habilitado`<br>`[ ] Obligatorio` | `[X] Habilitado`<br>`[ ] Obligatorio`
 ***`codPais`*** | **_`Código de país,`_**`del domicilio fiscal` | - | - | `[X] Habilitado`<br>`[ ] Obligatorio` | `[X] Habilitado`<br>`[ ] Obligatorio` | `[X] Habilitado`<br>`[ ] Obligatorio`
 
-###  Tabla de campos "receptor"
+###  Tabla de campos "{ receptor }"
 
 Campo | Descripción | Tipo y longitud | Formato | Habilitado / Obligatorio Factura | Habilitado / Obligatorio Boleta | Habilitado / Obligatorio Notas
 :- | :- | :- | :- | :- | :- | :-
@@ -56,7 +57,7 @@ Campo | Descripción | Tipo y longitud | Formato | Habilitado / Obligatorio Fact
 ***`urbanizacion`*** | **_`Urbanización`_** | - | - | `[X] Habilitado`<br>`[ ] Obligatorio` | `[X] Habilitado`<br>`[ ] Obligatorio` | `[X] Habilitado`<br>`[ ] Obligatorio`
 ***`codPais`*** | **_`Código de país`_** | - | - | `[X] Habilitado`<br>`[ ] Obligatorio` | `[X] Habilitado`<br>`[ ] Obligatorio` | `[X] Habilitado`<br>`[ ] Obligatorio`
 
-###  Tabla de campos "tributo"
+###  Tabla de campos "{ tributo }"
 
 Campo | Descripción | Tipo y longitud | Formato | Habilitado / Obligatorio Factura | Habilitado / Obligatorio Boleta | Habilitado / Obligatorio Notas
 :- | :- | :- | :- | :- | :- | :-
@@ -66,7 +67,7 @@ Campo | Descripción | Tipo y longitud | Formato | Habilitado / Obligatorio Fact
 **_`[{impuestos}].base`_** | _**`Total valor de venta`**_<br><br>`Si el`_**`Código de Tributo`**_`es`_**`"7152" - ICBPER,`**_`se deberá consignar`_**`0.00`**_ | - | - | `[X] Habilitado`<br>`[X] Obligatorio` | `[X] Habilitado`<br>`[X] Obligatorio` | `[X] Habilitado`<br>`[X] Obligatorio`
 **_`[{impuestos}].monto`_** | _**`Importe del impuesto`**_ | - | - | `[X] Habilitado`<br>`[X] Obligatorio` | `[X] Habilitado`<br>`[X] Obligatorio` | `[X] Habilitado`<br>`[X] Obligatorio`
 
-###  Tabla de campos "detalle"
+###  Tabla de campos "[{ detalle }]"
 
 Campo | Descripción | Tipo y longitud | Formato | Habilitado / Obligatorio Factura | Habilitado / Obligatorio Boleta | Habilitado / Obligatorio Notas
 :- | :- | :- | :- | :- | :- | :-
@@ -89,3 +90,11 @@ Campo | Descripción | Tipo y longitud | Formato | Habilitado / Obligatorio Fact
 **_`conceptos`_** | *`[{ codigo, valor }]`* | - | - | `[X] Habilitado`<br>`[ ] Obligatorio` | `[X] Habilitado`<br>`[ ] Obligatorio` | `[X] Habilitado`<br>`[ ] Obligatorio`
 **_`[{conceptos}].codigo`_** | _**`Código del concepto tributario,`**`por ítem`_<br><br>`Consultar catálogo nro. 55 (Códigos de Identificación del Concepto Tributario) - Anexo 8 SUNAT` | - | - | `[X] Habilitado`<br>`[X] Obligatorio` | `[X] Habilitado`<br>`[X] Obligatorio` | `[X] Habilitado`<br>`[X] Obligatorio`
 **_`[{conceptos}].valor`_** | _**`Valor del conceptor tributario`**_ | - | - | `[X] Habilitado`<br>`[X] Obligatorio` | `[X] Habilitado`<br>`[X] Obligatorio` | `[X] Habilitado`<br>`[X] Obligatorio`
+
+###  Tabla de campos "[{ referencias }]"
+
+`Campo` | `Descripción` | `Tipo y longitud` | `Formato` | `Habilitado / Obligatorio FA` | `Habilitado / Obligatorio BV` | `Habilitado / Obligatorio Notas`
+:- | :- | :- | :- | :- | :- | :-
+***`tipoComprobante`*** | **_`Tipo de comprobante que modifica`_**<br><br>`Consultar catálogo nro. 01 (Código de Tipo de Documento) - Anexo 8 SUNAT` | - | - | `[ ] Habilitado`<br>`[ ] Obligatorio` | `[ ] Habilitado`<br>`[ ] Obligatorio` | `[X] Habilitado`<br>`[X] Obligatorio`
+**_`serieComprobante`_** | _**`Serie del comprobante que modifica`**_ | - | - | `[ ] Habilitado`<br>`[ ] Obligatorio` | `[ ] Habilitado`<br>`[ ] Obligatorio` | `[X] Habilitado`<br>`[X] Obligatorio`
+**_`numeroComprobante`_** | _**`Número del comprobante que modifica`**_ | - | - | `[ ] Habilitado`<br>`[ ] Obligatorio` | `[ ] Habilitado`<br>`[ ] Obligatorio` | `[X] Habilitado`<br>`[X] Obligatorio`
