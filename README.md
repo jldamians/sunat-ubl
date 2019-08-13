@@ -93,18 +93,18 @@ Campo | Descripción | Tipo y longitud | Formato | Habilitado / Obligatorio Fact
 
 ###  Tabla de campos "[{ referencias }]"
 
-`Campo` | `Descripción` | `Tipo y longitud` | `Formato` | `Habilitado / Obligatorio FA` | `Habilitado / Obligatorio BV` | `Habilitado / Obligatorio Notas`
+`Campo` | `Descripción` | `Tipo y longitud` | `Formato` | `Habilitado / Obligatorio Notas`
 :- | :- | :- | :- | :- | :- | :-
-***`tipoComprobante`*** | **_`Tipo de comprobante que modifica`_**<br><br>`Consultar catálogo nro. 01 (Código de Tipo de Documento) - Anexo 8 SUNAT` | - | - | `[ ] Habilitado`<br>`[ ] Obligatorio` | `[ ] Habilitado`<br>`[ ] Obligatorio` | `[X] Habilitado`<br>`[X] Obligatorio`
-**_`serieComprobante`_** | _**`Serie del comprobante que modifica`**_ | - | - | `[ ] Habilitado`<br>`[ ] Obligatorio` | `[ ] Habilitado`<br>`[ ] Obligatorio` | `[X] Habilitado`<br>`[X] Obligatorio`
-**_`numeroComprobante`_** | _**`Número del comprobante que modifica`**_ | - | - | `[ ] Habilitado`<br>`[ ] Obligatorio` | `[ ] Habilitado`<br>`[ ] Obligatorio` | `[X] Habilitado`<br>`[X] Obligatorio`
+***`tipoComprobante`*** | **_`Tipo de comprobante que modifica`_**<br><br>`Consultar catálogo nro. 01 (Código de Tipo de Documento) - Anexo 8 SUNAT` | - | - | `[X] Habilitado`<br>`[X] Obligatorio`
+**_`serieComprobante`_** | _**`Serie del comprobante que modifica`**_ | - | - | `[X] Habilitado`<br>`[X] Obligatorio`
+**_`numeroComprobante`_** | _**`Número del comprobante que modifica`**_ | - | - | `[X] Habilitado`<br>`[X] Obligatorio`
 
 ###  Tabla de campos "[{ anticipos }]"
 
-`Campo` | `Descripción` | `Tipo y longitud` | `Formato` | `Habilitado / Obligatorio FA` | `Habilitado / Obligatorio BV` | `Habilitado / Obligatorio Notas`
-:- | :- | :- | :- | :- | :- | :-
-***`tipoComprobante`*** | **_`Tipo de comprobante que se realizó el anticipo`_**<br><br>`Consultar catálogo nro. 12 (Código de Documentos Relacionados Tributarios) - Anexo 8 SUNAT`<br><br>`Los únicos valores permitidos son los siguientes:`<br>**`"02" -> Factura,`** _`emitida por anticipos`_<br>**`"02" -> Boleta,`** _`emitida por anticipos`_ | - | - | `[X] Habilitado`<br>`[X] Obligatorio` | `[X] Habilitado`<br>`[X] Obligatorio` | `[ ] Habilitado`<br>`[ ] Obligatorio`
-**_`serieComprobante`_** | _**`Serie del comprobante que se realizó el anticipo`**_ | - | - | `[X] Habilitado`<br>`[X] Obligatorio` | `[X] Habilitado`<br>`[X] Obligatorio` | `[ ] Habilitado`<br>`[ ] Obligatorio`
-**_`numeroComprobante`_** | _**`Número del comprobante que se realizó el anticipo`**_ | - | - | `[X] Habilitado`<br>`[X] Obligatorio` | `[X] Habilitado`<br>`[X] Obligatorio` | `[ ] Habilitado`<br>`[ ] Obligatorio`
-**_`fechaPago`_** | _**`Fecha de pago del anticipo`**_ | - | - | `[X] Habilitado`<br>`[X] Obligatorio` | `[X] Habilitado`<br>`[X] Obligatorio` | `[ ] Habilitado`<br>`[ ] Obligatorio`
-**_`monto`_** | _**`Importe del anticipo`**_ | - | - | `[X] Habilitado`<br>`[X] Obligatorio` | `[X] Habilitado`<br>`[X] Obligatorio` | `[ ] Habilitado`<br>`[ ] Obligatorio`
+`Campo` | `Descripción` | `Tipo y longitud` | `Formato` | `Habilitado / Obligatorio FA` | `Habilitado / Obligatorio BV`
+:- | :- | :- | :- | :- | :-
+***`tipoComprobante`*** | **_`Tipo de comprobante que se realizó el anticipo`_**<br><br>`Consultar catálogo nro. 12 (Código de Documentos Relacionados Tributarios) - Anexo 8 SUNAT`<br><br>`Los únicos valores permitidos son los siguientes:`<br>**`"02" -> Factura,`** _`emitida por anticipos`_<br>**`"02" -> Boleta,`** _`emitida por anticipos`_ | - | - | `[X] Habilitado`<br>`[X] Obligatorio` | `[X] Habilitado`<br>`[X] Obligatorio`
+**_`serieComprobante`_** | _**`Serie del comprobante que se realizó el anticipo`**_ | - | - | `[X] Habilitado`<br>`[X] Obligatorio` | `[X] Habilitado`<br>`[X] Obligatorio`
+**_`numeroComprobante`_** | _**`Número del comprobante que se realizó el anticipo`**_ | - | - | `[X] Habilitado`<br>`[X] Obligatorio` | `[X] Habilitado`<br>`[X] Obligatorio`
+**_`fechaPago`_** | _**`Fecha de pago del anticipo`**_ | - | - | `[X] Habilitado`<br>`[X] Obligatorio` | `[X] Habilitado`<br>`[X] Obligatorio`
+**_`monto`_** | _**`Importe del anticipo`**_ | - | - | `[X] Habilitado`<br>`[X] Obligatorio` | `[X] Habilitado`<br>`[X] Obligatorio`
