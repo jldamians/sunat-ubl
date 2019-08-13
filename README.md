@@ -94,7 +94,7 @@ Campo | Descripción | Tipo y longitud | Formato | Habilitado / Obligatorio Fact
 ###  Tabla de campos "[{ referencias }]"
 
 `Campo` | `Descripción` | `Tipo y longitud` | `Formato` | `Habilitado / Obligatorio Notas`
-:- | :- | :- | :- | :- | :- | :-
+:- | :- | :- | :- | :- 
 ***`tipoComprobante`*** | **_`Tipo de comprobante que modifica`_**<br><br>`Consultar catálogo nro. 01 (Código de Tipo de Documento) - Anexo 8 SUNAT` | - | - | `[X] Habilitado`<br>`[X] Obligatorio`
 **_`serieComprobante`_** | _**`Serie del comprobante que modifica`**_ | - | - | `[X] Habilitado`<br>`[X] Obligatorio`
 **_`numeroComprobante`_** | _**`Número del comprobante que modifica`**_ | - | - | `[X] Habilitado`<br>`[X] Obligatorio`
