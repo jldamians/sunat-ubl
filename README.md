@@ -119,9 +119,9 @@ Campo | Descripción | Tipo y longitud | Formato | Habilitado / Obligatorio Fact
 
 ###  Tabla de campos "[{ anexos }]"
 
-`Campo` | `Descripción` | `Tipo y longitud` | `Formato` | `Habilitado / Obligatorio Factura y Boleta`
-:- | :- | :- | :- | :- 
-***`tipoGuia`*** | **_`Tipo de guía relacionada`_**<br><br>`Si este campo es utilizado, deberá omitir el campo:`**`tipoOtro`**<br><br>`Consultar catálogo nro. 01 (Código de Tipo de Documento) - Anexo 8 SUNAT`<br><br>`Los únicos valores permitidos son los siguientes:`<br>**`"09" -> Guía de remisión remitente`**<br>**`"31" -> Guía de remisión transportista`** | - | - | `[X] HBLTD`<br>`[ ] OBGTR`
-***`tipoOtro`*** | **_`Tipo de documento relacionado`_**<br><br>`Si este campo es utilizado, deberá omitir el campo:`**`tipoGuia`**<br><br>`Consultar catálogo nro. 12 (Código de Documentos Relacionados Tributarios) - Anexo 8 SUNAT`<br><br>`Los únicos valores permitidos son los siguientes:`<br>**`"01" -> Factura - Corregir RUC`**<br>**`"04" -> Ticket de salida - ENAPU`**<br>**`"05" -> Código SCOP`**<br>**`"06" -> Factura electrónica remitente`**<br>**`"07" -> Guía de remisión remitente`**<br>**`"99" -> Otros`** | - | - | `[X] HBLTD`<br>`[ ] OBGTR`
-**_`serieComprobante`_** | _**`Serie del comprobante`**_ | - | - | `[X] HBLTD`<br>`[X] OBGTR`
-**_`numeroComprobante`_** | _**`Número del comprobante`**_ | - | - | `[X] HBLTD`<br>`[X] OBGTR`
+`Campo` | `Descripción` | `Longitud / Formato` | `Habilitado / Obligatorio Factura y Boleta`
+:- | :- | :- | :-
+***`tipoGuia`*** | **_`Tipo de guía relacionada`_**<br><br>`Si este campo es utilizado, deberá omitir el campo:`**`tipoOtro`**<br><br>`Consultar catálogo nro. 01 (Código de Tipo de Documento) - Anexo 8 SUNAT`<br><br>`Los únicos valores permitidos son los siguientes:`<br>**`"09" -> Guía de remisión remitente`**<br>**`"31" -> Guía de remisión transportista`** | `n2`<br><br>`String(2)` | `[X] HBLTD`<br>`[ ] OBGTR`
+***`tipoOtro`*** | **_`Tipo de documento relacionado`_**<br><br>`Si este campo es utilizado, deberá omitir el campo:`**`tipoGuia`**<br><br>`Consultar catálogo nro. 12 (Código de Documentos Relacionados Tributarios) - Anexo 8 SUNAT`<br><br>`Los únicos valores permitidos son los siguientes:`<br>**`"01" -> Factura - Corregir RUC`**<br>**`"04" -> Ticket de salida - ENAPU`**<br>**`"05" -> Código SCOP`**<br>**`"06" -> Factura electrónica remitente`**<br>**`"07" -> Guía de remisión remitente`**<br>**`"99" -> Otros`** | `n2`<br><br>`String(2)` | `[X] HBLTD`<br>`[ ] OBGTR`
+**_`serieComprobante`_** | _**`Serie del comprobante`**_ | `an4`<br><br>`String(4)` | `[X] HBLTD`<br>`[X] OBGTR`
+**_`numeroComprobante`_** | _**`Número del comprobante`**_ | `an..8`<br><br>`Integer(8)` | `[X] HBLTD`<br>`[X] OBGTR`
