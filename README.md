@@ -99,29 +99,30 @@ Campo | Descripción | Tipo y longitud | Formato | Habilitado / Obligatorio Fact
 **_`[{conceptos}].codigo`_** | _**`Código del concepto tributario,`**`por ítem`_<br><br>`Consultar catálogo nro. 55 (Códigos de Identificación del Concepto Tributario) - Anexo 8 SUNAT` | - | - | `[X] Habilitado`<br>`[X] Obligatorio` | `[X] Habilitado`<br>`[X] Obligatorio` | `[X] Habilitado`<br>`[X] Obligatorio`
 **_`[{conceptos}].valor`_** | _**`Valor del conceptor tributario`**_ | - | - | `[X] Habilitado`<br>`[X] Obligatorio` | `[X] Habilitado`<br>`[X] Obligatorio` | `[X] Habilitado`<br>`[X] Obligatorio`
 
-###  Tabla de campos "[{ referencias }]"
-
-`Campo` | `Descripción` | `Tipo y longitud` | `Formato` | `Habilitado / Obligatorio Notas`
-:- | :- | :- | :- | :- 
-***`tipoComprobante`*** | **_`Tipo de comprobante que modifica`_**<br><br>`Consultar catálogo nro. 01 (Código de Tipo de Documento) - Anexo 8 SUNAT` | - | - | `[X] Habilitado`<br>`[X] Obligatorio`
-**_`serieComprobante`_** | _**`Serie del comprobante que modifica`**_ | - | - | `[X] Habilitado`<br>`[X] Obligatorio`
-**_`numeroComprobante`_** | _**`Número del comprobante que modifica`**_ | - | - | `[X] Habilitado`<br>`[X] Obligatorio`
 
 ###  Tabla de campos "[{ anticipos }]"
 
-`Campo` | `Descripción` | `Tipo y longitud` | `Formato` | `Habilitado / Obligatorio Factura y Boleta`
+`Campo` | `Descripción` | `Longitud / Formato` | `Habilitado / Obligatorio Factura y Boleta`
 :- | :- | :- | :- | :-
-***`tipoComprobante`*** | **_`Tipo de comprobante que se realizó el anticipo`_**<br><br>`Consultar catálogo nro. 12 (Código de Documentos Relacionados Tributarios) - Anexo 8 SUNAT`<br><br>`Los únicos valores permitidos son los siguientes:`<br>**`"02" -> Factura,`** _`emitida por anticipos`_<br>**`"03" -> Boleta,`** _`emitida por anticipos`_ | - | - | `[X] HBLTD`<br>`[X] OBGTR`
-**_`serieComprobante`_** | _**`Serie del comprobante que se realizó el anticipo`**_ | - | - | `[X] HBLTD`<br>`[X] OBGTR`
-**_`numeroComprobante`_** | _**`Número del comprobante que se realizó el anticipo`**_ | - | - | `[X] HBLTD`<br>`[X] OBGTR`
-**_`fechaPago`_** | _**`Fecha de pago del anticipo`**_ | - | - | `[X] HBLTD`<br>`[X] OBGTR` 
-**_`monto`_** | _**`Importe del anticipo`**_ | - | - | `[X] HBLTD`<br>`[X] OBGTR` 
+***`tipoComprobante`*** | **_`Tipo de comprobante que se realizó el anticipo`_**<br><br>`Consultar catálogo nro. 12 (Código de Documentos Relacionados Tributarios) - Anexo 8 SUNAT`<br><br>`Los únicos valores permitidos son los siguientes:`<br>**`"02" -> Factura,`** _`emitida por anticipos`_<br>**`"03" -> Boleta,`** _`emitida por anticipos`_ | `String(2)`<br><br>`n2` | `[X] HBLTD`<br>`[X] OBGTR`
+**_`serieComprobante`_** | _**`Serie del comprobante que se realizó el anticipo`**_ | `String(4)`<br><br>`an4` | `[X] HBLTD`<br>`[X] OBGTR`
+**_`numeroComprobante`_** | _**`Número del comprobante que se realizó el anticipo`**_ | `Integer`<br><br>`n..8` | `[X] HBLTD`<br>`[X] OBGTR`
+**_`fechaPago`_** | _**`Fecha de pago del anticipo`**_ | `Date()`<br><br>`YYYY-MM-DD` | `[X] HBLTD`<br>`[X] OBGTR` 
+**_`monto`_** | _**`Importe del anticipo`**_ | `Decimal(14,2)`<br><br>`n(12,2)` | `[X] HBLTD`<br>`[X] OBGTR` 
 
 ###  Tabla de campos "[{ anexos }]"
 
 `Campo` | `Descripción` | `Longitud / Formato` | `Habilitado / Obligatorio Factura y Boleta`
 :- | :- | :- | :-
-***`tipoGuia`*** | **_`Tipo de guía relacionada`_**<br><br>`Si este campo es utilizado, deberá omitir el campo:`**`tipoOtro`**<br><br>`Consultar catálogo nro. 01 (Código de Tipo de Documento) - Anexo 8 SUNAT`<br><br>`Los únicos valores permitidos son los siguientes:`<br>**`"09" -> Guía de remisión remitente`**<br>**`"31" -> Guía de remisión transportista`** | `n2`<br><br>`String(2)` | `[X] HBLTD`<br>`[ ] OBGTR`
-***`tipoOtro`*** | **_`Tipo de documento relacionado`_**<br><br>`Si este campo es utilizado, deberá omitir el campo:`**`tipoGuia`**<br><br>`Consultar catálogo nro. 12 (Código de Documentos Relacionados Tributarios) - Anexo 8 SUNAT`<br><br>`Los únicos valores permitidos son los siguientes:`<br>**`"01" -> Factura - Corregir RUC`**<br>**`"04" -> Ticket de salida - ENAPU`**<br>**`"05" -> Código SCOP`**<br>**`"06" -> Factura electrónica remitente`**<br>**`"07" -> Guía de remisión remitente`**<br>**`"99" -> Otros`** | `n2`<br><br>`String(2)` | `[X] HBLTD`<br>`[ ] OBGTR`
-**_`serieComprobante`_** | _**`Serie del comprobante`**_ | `an4`<br><br>`String(4)` | `[X] HBLTD`<br>`[X] OBGTR`
-**_`numeroComprobante`_** | _**`Número del comprobante`**_ | `an..8`<br><br>`Integer(8)` | `[X] HBLTD`<br>`[X] OBGTR`
+***`tipoGuia`*** | **_`Tipo de guía relacionada`_**<br><br>`Si este campo es utilizado, deberá omitir el campo:`**`tipoOtro`**<br><br>`Consultar catálogo nro. 01 (Código de Tipo de Documento) - Anexo 8 SUNAT`<br><br>`Los únicos valores permitidos son los siguientes:`<br>**`"09" -> Guía de remisión remitente`**<br>**`"31" -> Guía de remisión transportista`** | `String(2)`<br><br>`n2` | `[X] HBLTD`<br>`[ ] OBGTR`
+***`tipoOtro`*** | **_`Tipo de documento relacionado`_**<br><br>`Si este campo es utilizado, deberá omitir el campo:`**`tipoGuia`**<br><br>`Consultar catálogo nro. 12 (Código de Documentos Relacionados Tributarios) - Anexo 8 SUNAT`<br><br>`Los únicos valores permitidos son los siguientes:`<br>**`"01" -> Factura - Corregir RUC`**<br>**`"04" -> Ticket de salida - ENAPU`**<br>**`"05" -> Código SCOP`**<br>**`"06" -> Factura electrónica remitente`**<br>**`"07" -> Guía de remisión remitente`**<br>**`"99" -> Otros`** | `String(2)`<br><br>`n2` | `[X] HBLTD`<br>`[ ] OBGTR`
+**_`serieComprobante`_** | _**`Serie del comprobante`**_ | `String(4)`<br><br>`an4` | `[X] HBLTD`<br>`[X] OBGTR`
+**_`numeroComprobante`_** | _**`Número del comprobante`**_ | `Integer`<br><br>`n..8` | `[X] HBLTD`<br>`[X] OBGTR`
+
+###  Tabla de campos "[{ referencias }]"
+
+`Campo` | `Descripción` | `Longitud / Formato` | `Habilitado / Obligatorio Notas`
+:- | :- | :- | :-
+***`tipoComprobante`*** | **_`Tipo de comprobante que modifica`_**<br><br>`Consultar catálogo nro. 01 (Código de Tipo de Documento) - Anexo 8 SUNAT` | `String(2)`<br><br>`n2` | `[X] Habilitado`<br>`[X] Obligatorio`
+**_`serieComprobante`_** | _**`Serie del comprobante que modifica`**_ | `String(4)`<br><br>`an4` | `[X] Habilitado`<br>`[X] Obligatorio`
+**_`numeroComprobante`_** | _**`Número del comprobante que modifica`**_ | `Integer` <br><br>`n..8` | `[X] Habilitado`<br>`[X] Obligatorio`
