@@ -103,7 +103,7 @@ Campo | Descripción | Tipo y longitud | Formato | Habilitado / Obligatorio Fact
 ###  Tabla de campos "[{ anticipos }]"
 
 `Campo` | `Descripción` | `Longitud / Formato` | `Habilitado / Obligatorio Factura y Boleta`
-:- | :- | :- | :- | :-
+:- | :- | :- | :- 
 ***`tipoComprobante`*** | **_`Tipo de comprobante que se realizó el anticipo`_**<br><br>`Consultar catálogo nro. 12 (Código de Documentos Relacionados Tributarios) - Anexo 8 SUNAT`<br><br>`Los únicos valores permitidos son los siguientes:`<br>**`"02" -> Factura,`** _`emitida por anticipos`_<br>**`"03" -> Boleta,`** _`emitida por anticipos`_ | `String(2)`<br><br>`n2` | `[X] HBLTD`<br>`[X] OBGTR`
 **_`serieComprobante`_** | _**`Serie del comprobante que se realizó el anticipo`**_ | `String(4)`<br><br>`an4` | `[X] HBLTD`<br>`[X] OBGTR`
 **_`numeroComprobante`_** | _**`Número del comprobante que se realizó el anticipo`**_ | `Integer`<br><br>`n..8` | `[X] HBLTD`<br>`[X] OBGTR`
@@ -123,6 +123,6 @@ Campo | Descripción | Tipo y longitud | Formato | Habilitado / Obligatorio Fact
 
 `Campo` | `Descripción` | `Longitud / Formato` | `Habilitado / Obligatorio Notas`
 :- | :- | :- | :-
-***`tipoComprobante`*** | **_`Tipo de comprobante que modifica`_**<br><br>`Consultar catálogo nro. 01 (Código de Tipo de Documento) - Anexo 8 SUNAT` | `String(2)`<br><br>`n2` | `[X] Habilitado`<br>`[X] Obligatorio`
-**_`serieComprobante`_** | _**`Serie del comprobante que modifica`**_ | `String(4)`<br><br>`an4` | `[X] Habilitado`<br>`[X] Obligatorio`
-**_`numeroComprobante`_** | _**`Número del comprobante que modifica`**_ | `Integer` <br><br>`n..8` | `[X] Habilitado`<br>`[X] Obligatorio`
+***`tipoComprobante`*** | **_`Tipo de comprobante que modifica`_**<br><br>`Consultar catálogo nro. 01 (Código de Tipo de Documento) - Anexo 8 SUNAT` | `String(2)`<br><br>`n2` | `[X] HBLTD`<br>`[X] OBGTR`
+**_`serieComprobante`_** | _**`Serie del comprobante que modifica`**_ | `String(4)`<br><br>`an4` | `[X] HBLTD`<br>`[X] OBGTR`
+**_`numeroComprobante`_** | _**`Número del comprobante que modifica`**_ | `Integer` <br><br>`n..8` | `[X] HBLTD`<br>`[X] OBGTR`
