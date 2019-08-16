@@ -27,6 +27,7 @@
   },
   "homepage": "https://github.com/jldamians/sunat-ubl#readme",
   "dependencies": {
+    "lodash.pick": "^4.4.0",
     "numeral": "^2.0.6",
     "require-dir": "^1.2.0",
     "xmlbuilder": "^13.0.2"
