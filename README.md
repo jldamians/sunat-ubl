@@ -1,6 +1,3 @@
-
-
-
 # SUNAT - UBL 2.1
 
 ## Nomenclatura
@@ -126,3 +123,21 @@ Campo | Descripción | Tipo y longitud | Formato | Habilitado / Obligatorio Fact
 ***`tipoComprobante`*** | **_`Tipo de comprobante que modifica`_**<br><br>`Consultar catálogo nro. 01 (Código de Tipo de Documento) - Anexo 8 SUNAT` | `String(2)`<br><br>`n2` | `[X] HBLTD`<br>`[X] OBGTR`
 **_`serieComprobante`_** | _**`Serie del comprobante que modifica`**_ | `String(4)`<br><br>`an4` | `[X] HBLTD`<br>`[X] OBGTR`
 **_`numeroComprobante`_** | _**`Número del comprobante que modifica`**_ | `Integer` <br><br>`n..8` | `[X] HBLTD`<br>`[X] OBGTR`
+
+###  Tabla de campos "{ descuento }"
+
+`Campo` | `Descripción` | `Longitud / Formato` | `Habilitado / Obligatorio Factura y Boleta`
+:- | :- | :- | :-
+***`codigo`*** | **_`Código de motivo de descuento`_**<br><br>`Consultar catálogo nro. 53 (Códigos de Cargos o Descuentos) - Anexo 8 SUNAT`<br><br>`Los únicos valores permitidos son los siguientes:`<br>**`"02" -> Descuentos globales que afectan la base imponible del IGV/IVAP`**<br>**`"03" -> Descuentos globales que NO afectan la base imponible del IGV/IVAP`**<br>**`"04" -> Descuentos globales por anticipos gravados que afectan la base imponible del IGV/IVAP`**<br>**`"05" -> Descuentos globales por anticipos exonerados`**<br>**`"06" -> Descuentos globales por anticipos inafectos`** | `n2` | `[X] HBLTD`<br>`[X] OBGTR`
+**_`tasa`_** | _**`Factor de descuento`**_<br><br>`Se deberá consignar un valor comprendido entre 1% y 100%` | `n(3,5)` | `[X] HBLTD`<br>`[X] OBGTR`
+**_`base`_** | _**`Monto base del descuento`**_<br><br>`Monto sobre el cual se aplica la tasa de descuento` | `n(12,2)` | `[X] HBLTD`<br>`[X] OBGTR`
+**_`monto`_** | _**`Monto del descuento`**_ | `n(12,2)` | `[X] HBLTD`<br>`[X] OBGTR`
+
+###  Tabla de campos "{ cargo }"
+
+`Campo` | `Descripción` | `Longitud / Formato` | `Habilitado / Obligatorio Factura y Boleta`
+:- | :- | :- | :-
+***`codigo`*** | **_`Código de motivo de cargo`_**<br><br>`Consultar catálogo nro. 53 (Códigos de Cargos o Descuentos) - Anexo 8 SUNAT`<br><br>`Los únicos valores permitidos son los siguientes:`<br>**`"49" -> Cargos globales que afectan la base imponible del IGV/IVAP`**<br>**`"50" -> Cargos globales que NO afectan la base imponible del IGV/IVAP`** | `n2` | `[X] HBLTD`<br>`[X] OBGTR`
+**_`tasa`_** | _**`Factor de cargo`**_<br><br>`Se deberá consignar un valor comprendido entre 1% y 100%` | `n(3,5)` | `[X] HBLTD`<br>`[X] OBGTR`
+**_`base`_** | _**`Monto base del cargo`**_<br><br>`Monto sobre el cual se aplica la tasa de cargo` | `n(12,2)` | `[X] HBLTD`<br>`[X] OBGTR`
+**_`monto`_** | _**`Monto del cargo`**_ | `n(12,2)` | `[X] HBLTD`<br>`[X] OBGTR`
