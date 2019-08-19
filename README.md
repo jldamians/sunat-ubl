@@ -76,6 +76,10 @@ Campo | Descripción | Tipo y longitud | Formato | Habilitado / Obligatorio Fact
 
 `Campo` | `Descripción` | `Longitud / Formato` | `Habilitado / Obligatorio FA y BV` | `Habilitado / Obligatorio NC y ND`
 :- | :- | :- | :- | :- 
+***`codInterno`*** | **_`Código de producto,`_**`de acuerdo al tipo de codificación interna que se utilice` | - | `[X] HBLTD`<br>`[ ] OBGTR` | `[X] HBLTD`<br>`[ ] OBGTR`
+***`codUnspsc`*** | **_`Código de producto SUNAT,`_**`de acuerdo al estandar internacional de la ONU denominado:`**`United Nations Standard Products and Services Code - UNSPSC`** | - | `[X] HBLTD`<br>`[ ] OBGTR` | `[X] HBLTD`<br>`[ ] OBGTR`
+***`codGtin`*** | **_`Código de producto GTIN,`_**`para identificar los productos comerciales` | - | `[X] HBLTD`<br>`[ ] OBGTR` | `[X] HBLTD`<br>`[ ] OBGTR`
+***`descripcion`*** | **_`Descripción detallada,`_**`del servicio prestado, bien vendido o cedico en uso, indicando las características` | - | `[X] HBLTD`<br>`[ ] OBGTR` | `[X] HBLTD`<br>`[ ] OBGTR`
 ***`codMedida`*** | **_`Unidad de medida,`_**`por ítem`<br><br>`Consultar catálogo nro. 03 (Código de Tipo de Unidad de Medida Comercial) - Anexo 8 SUNAT` | - | `[X] HBLTD`<br>`[X] OBGTR` | `[X] HBLTD`<br>`[X] OBGTR`
 ***`cantidad`*** | **_`Cantidad de unidades,`_**`por ítem` | - | `[X] HBLTD`<br>`[X] OBGTR` | `[X] HBLTD`<br>`[X] OBGTR`
 ***`tipoPrecioUnitario`*** | **_`Tipo de precio unitario,`_**`por ítem`<br><br>`Consultar catálogo nro. 16 (Código de Tipo de Precio de Venta Unitario) - Anexo 8 SUNAT`<br><br>`Utilizar los códigos, teniendo en cuenta lo siguiente:`<br>**`"01" -> Precio Unitario,`** _`para operaciones onerosas`_<br>**`"02" -> Valor Referencial Unitario,`** _`para operaciones no onerosas (gratuitas)`_ | - | `[X] HBLTD`<br>`[X] OBGTR` | `[X] HBLTD`<br>`[X] OBGTR`
