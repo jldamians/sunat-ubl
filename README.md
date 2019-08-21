@@ -1,3 +1,4 @@
+
 # SUNAT - UBL 2.1
 
 ## Nomenclatura
@@ -32,35 +33,36 @@ Abreviatura | Descripción
 
 ###  Tabla de campos "{ emisor }"
 
-Campo | Descripción | Tipo y longitud | Formato | Habilitado / Obligatorio Factura | Habilitado / Obligatorio Boleta | Habilitado / Obligatorio Notas
-:- | :- | :- | :- | :- | :- | :-
-***`tipoDocumento`*** | **_`Tipo de documento de indentidad`_** <br><br> `Consultar catálogo nro. 06 (Códigos de Tipo de Documento de Identidad) - Anexo 8 SUNAT` <br><br> `Se deberá emplear el código `**`6 - Registro Único de Contribuyente (RUC)`** | - | - | `[X] Habilitado`<br>`[X] Obligatorio` | `[X] Habilitado`<br>`[X] Obligatorio` | `[X] Habilitado`<br>`[X] Obligatorio`
-***`numeroDocumento`*** | **_`Número de documento de identidad`_** <br><br> `Número de Registro Único de Contribuyente (RUC)` | - | - | `[X] Habilitado`<br>`[X] Obligatorio` | `[X] Habilitado`<br>`[X] Obligatorio` | `[X] Habilitado`<br>`[X] Obligatorio`
-***`razonSocial`*** | **_`Razón social,`_**`denominación o apellidos y nombres` | - | - | `[X] Habilitado`<br>`[X] Obligatorio` | `[X] Habilitado`<br>`[X] Obligatorio` | `[X] Habilitado`<br>`[X] Obligatorio`
-***`nombreComercial`*** | **_`Nombre comercial`_** | - | - | `[X] Habilitado`<br>`[ ] Obligatorio` | `[X] Habilitado`<br>`[ ] Obligatorio` | `[X] Habilitado`<br>`[ ] Obligatorio`
-***`codUbigeo`*** | **_`Código de UBIGEO,`_**`del domicilio fiscal` <br><br> `Consultar catálogo nro. 13 (Códigos de Ubicación Geográfica) - Anexo 8 SUNAT` | - | - | `[X] Habilitado`<br>`[ ] Obligatorio` | `[X] Habilitado`<br>`[ ] Obligatorio` | `[X] Habilitado`<br>`[ ] Obligatorio`
-***`departamento`*** | **_`Departamento,`_**`del domicilio fiscal` | - | - | `[X] Habilitado`<br>`[ ] Obligatorio` | `[X] Habilitado`<br>`[ ] Obligatorio` | `[X] Habilitado`<br>`[ ] Obligatorio`
-***`provincia`*** | **_`Provincia,`_**`del domicilio fiscal` | - | - | `[X] Habilitado`<br>`[ ] Obligatorio` | `[X] Habilitado`<br>`[ ] Obligatorio` | `[X] Habilitado`<br>`[ ] Obligatorio`
-***`distrito`*** | **_`Distrito,`_**`del domicilio fiscal` | - | - | `[X] Habilitado`<br>`[ ] Obligatorio` | `[X] Habilitado`<br>`[ ] Obligatorio` | `[X] Habilitado`<br>`[ ] Obligatorio`
-***`codLocal`*** | **_`Código del estableciminto anexo,`_**`donde se está realizando la venta de bienes` <br><br> `En caso de no poder determinar el lugar de la venta, informar` **`"0000"`** | - | - | `[X] Habilitado`<br>`[X] Obligatorio` | `[X] Habilitado`<br>`[X] Obligatorio` | `[X] Habilitado`<br>`[X] Obligatorio`
-***`direccion`*** | **_`Dirección,`_** `completa y detallada del domicilio fiscal` | - | - | `[X] Habilitado`<br>`[ ] Obligatorio` | `[X] Habilitado`<br>`[ ] Obligatorio` | `[X] Habilitado`<br>`[ ] Obligatorio`
-***`urbanizacion`*** | **_`Urbanización,`_**`del domicilio fiscal` | - | - | `[X] Habilitado`<br>`[ ] Obligatorio` | `[X] Habilitado`<br>`[ ] Obligatorio` | `[X] Habilitado`<br>`[ ] Obligatorio`
-***`codPais`*** | **_`Código de país,`_**`del domicilio fiscal` | - | - | `[X] Habilitado`<br>`[ ] Obligatorio` | `[X] Habilitado`<br>`[ ] Obligatorio` | `[X] Habilitado`<br>`[ ] Obligatorio`
+`Campo` | `Descripción` | `Longitud / Formato` | `Factura y Boleta` | `Nota de Crédito y Nota de Débito` | `Retención y Percepción`
+:- | :- | :- | :- | :- | :-
+***`tipoDocumento`*** | **_`Tipo de documento de indentidad`_** <br><br> `Consultar catálogo nro. 06 (Códigos de Tipo de Documento de Identidad) - Anexo 8 SUNAT` <br><br> `Se deberá emplear el código `**`6 - Registro Único de Contribuyente (RUC)`** | **`n1`** | `[X] HBLTD`<br>`[X] OBGTR` | `[X] HBLTD`<br>`[X] OBGTR` | `[X] HBLTD`<br>`[X] OBGTR`
+***`numeroDocumento`*** | **_`Número de documento de identidad`_** <br><br> `Número de Registro Único de Contribuyente (RUC)` | **`n11`** | `[X] HBLTD`<br>`[X] OBGTR` | `[X] HBLTD`<br>`[X] OBGTR` | `[X] HBLTD`<br>`[X] OBGTR`
+***`razonSocial`*** | **_`Razón social,`_**`denominación o apellidos y nombres` | **`an..1500`** | `[X] HBLTD`<br>`[X] OBGTR` | `[X] HBLTD`<br>`[X] OBGTR` | `[X] HBLTD`<br>`[X] OBGTR`
+***`nombreComercial`*** | **_`Nombre comercial`_** | **`an..1500`** | `[X] HBLTD`<br>`[ ] OBGTR` | `[X] HBLTD`<br>`[ ] OBGTR` | `[X] HBLTD`<br>`[ ] OBGTR`
+***`codUbigeo`*** | **_`Código de UBIGEO,`_**`del domicilio fiscal` <br><br> `Consultar catálogo nro. 13 (Códigos de Ubicación Geográfica) - Anexo 8 SUNAT` | **`n6`** | `[X] HBLTD`<br>`[ ] OBGTR` | `[X] HBLTD`<br>`[ ] OBGTR` | `[X] HBLTD`<br>`[ ] OBGTR`
+***`departamento`*** | **_`Departamento,`_**`del domicilio fiscal` | **`an..30`** | `[X] HBLTD`<br>`[ ] OBGTR` | `[X] HBLTD`<br>`[ ] OBGTR` | `[X] HBLTD`<br>`[ ] OBGTR`
+***`provincia`*** | **_`Provincia,`_**`del domicilio fiscal` | **`an..30`** | `[X] HBLTD`<br>`[ ] OBGTR` | `[X] HBLTD`<br>`[ ] OBGTR` | `[X] HBLTD`<br>`[ ] OBGTR`
+***`distrito`*** | **_`Distrito,`_**`del domicilio fiscal` | **`an..30`** | `[X] HBLTD`<br>`[ ] OBGTR` | `[X] HBLTD`<br>`[ ] OBGTR` | `[X] HBLTD`<br>`[ ] OBGTR`
+***`codLocal`*** | **_`Código del estableciminto anexo,`_**`donde se está realizando la venta de bienes` <br><br> `En caso de no poder determinar el lugar de la venta, informar` **`"0000"`** | **`n4`** | `[X] HBLTD`<br>`[X] OBGTR` | `[X] HBLTD`<br>`[X] OBGTR` | `[ ] HBLTD`<br>`[ ] OBGTR`
+***`direccion`*** | **_`Dirección,`_** `completa y detallada del domicilio fiscal` | `Para los comprobantes "01", "03", "07" y "08", la longitud será:`<br>**`an..200`**<br><br>`Para los comprobantes "20" y "40", la longitud será:`<br>**`an..100`** | `[X] HBLTD`<br>`[ ] OBGTR` | `[X] HBLTD`<br>`[ ] OBGTR` | `[X] HBLTD`<br>`[ ] OBGTR`
+***`urbanizacion`*** | **_`Urbanización,`_**`del domicilio fiscal` | `Para los comprobantes "01", "03", "07" y "08", la longitud será:`<br>**`an..25`**<br><br>`Para los comprobantes "20" y "40", la longitud será:`<br>**`an..30`** | `[X] HBLTD`<br>`[ ] OBGTR` | `[X] HBLTD`<br>`[ ] OBGTR` | `[X] HBLTD`<br>`[ ] OBGTR`
+***`codPais`*** | **_`Código de país,`_**`del domicilio fiscal` | **`n2`** | `[X] HBLTD`<br>`[ ] OBGTR` | `[X] HBLTD`<br>`[ ] OBGTR` | `[X] HBLTD`<br>`[ ] OBGTR`
 
 ###  Tabla de campos "{ receptor }"
 
-Campo | Descripción | Tipo y longitud | Formato | Habilitado / Obligatorio Factura | Habilitado / Obligatorio Boleta | Habilitado / Obligatorio Notas
-:- | :- | :- | :- | :- | :- | :-
-***`tipoDocumento`*** | **_`Tipo de documento de indentidad`_** <br><br> `Consultar catálogo nro. 06 (Códigos de Tipo de Documento de Identidad) - Anexo 8 SUNAT` <br><br> `Se deberá emplear el código `**`6 - Registro Único de Contribuyente (RUC)`** | - | - | `[X] Habilitado [X] Obligatorio` | `[X] Habilitado` <br> `[X] Obligatorio` | `[X] Habilitado` <br> `[X] Obligatorio`
-***`numeroDocumento`*** | **_`Número de documento de identidad`_** <br><br> `Número de Registro Único de Contribuyente (RUC)` | - | - | `[X] Habilitado`<br>`[X] Obligatorio` | `[X] Habilitado`<br>`[X] Obligatorio` | `[X] Habilitado`<br>`[X] Obligatorio`
-***`razonSocial`*** | **_`Razón social,`_**`denominación o apellidos y nombres` | - | - | `[X] Habilitado`<br>`[X] Obligatorio` | `[X] Habilitado`<br>`[X] Obligatorio` | `[X] Habilitado`<br>`[X] Obligatorio`
-***`codUbigeo`*** | **_`Código de UBIGEO`_** <br><br> `Consultar catálogo nro. 13 (Códigos de Ubicación Geográfica) - Anexo 8 SUNAT` | - | - | `[X] Habilitado`<br>`[ ] Obligatorio` | `[X] Habilitado`<br>`[ ] Obligatorio` | `[X] Habilitado`<br>`[ ] Obligatorio`
-***`departamento`*** | **_`Departamento`_** | - | - | `[X] Habilitado`<br>`[ ] Obligatorio` | `[X] Habilitado`<br>`[ ] Obligatorio` | `[X] Habilitado`<br>`[ ] Obligatorio`
-***`provincia`*** | **_`Provincia`_** | - | - | `[X] Habilitado`<br>`[ ] Obligatorio` | `[X] Habilitado`<br>`[ ] Obligatorio` | `[X] Habilitado`<br>`[ ] Obligatorio`
-***`distrito`*** | **_`Distrito`_** | - | - | `[X] Habilitado`<br>`[ ] Obligatorio` | `[X] Habilitado`<br>`[ ] Obligatorio` | `[X] Habilitado`<br>`[ ] Obligatorio`
-***`direccion`*** | **_`Dirección,`_** `completa y detallada` | - | - | `[X] Habilitado`<br>`[ ] Obligatorio` | `[X] Habilitado`<br>`[ ] Obligatorio` | `[X] Habilitado`<br>`[ ] Obligatorio`
-***`urbanizacion`*** | **_`Urbanización`_** | - | - | `[X] Habilitado`<br>`[ ] Obligatorio` | `[X] Habilitado`<br>`[ ] Obligatorio` | `[X] Habilitado`<br>`[ ] Obligatorio`
-***`codPais`*** | **_`Código de país`_** | - | - | `[X] Habilitado`<br>`[ ] Obligatorio` | `[X] Habilitado`<br>`[ ] Obligatorio` | `[X] Habilitado`<br>`[ ] Obligatorio`
+`Campo` | `Descripción` | `Longitud / Formato` | `Factura y Boleta` | `Nota de Crédito y Nota de Débito` | `Retención y Percepción`
+:- | :- | :- | :- | :- | :-
+***`tipoDocumento`*** | **_`Tipo de documento de indentidad`_** <br><br> `Consultar catálogo nro. 06 (Códigos de Tipo de Documento de Identidad) - Anexo 8 SUNAT` <br><br> `Se deberá emplear el código `**`6 - Registro Único de Contribuyente (RUC)`** | **`n1`** | `[X] HBLTD [X] OBGTR` | `[X] HBLTD` <br> `[X] OBGTR` | `[X] HBLTD` <br> `[X] OBGTR`
+***`numeroDocumento`*** | **_`Número de documento de identidad`_** <br><br> `Número de Registro Único de Contribuyente (RUC)` | **`n..15`** | `[X] HBLTD`<br>`[X] OBGTR` | `[X] HBLTD`<br>`[X] OBGTR` | `[X] HBLTD`<br>`[X] OBGTR`
+***`razonSocial`*** | **_`Razón social,`_**`denominación o apellidos y nombres` | **`an..1500`** | `[X] HBLTD`<br>`[X] OBGTR` | `[X] HBLTD`<br>`[X] OBGTR` | `[X] HBLTD`<br>`[X] OBGTR`
+***`nombreComercial`*** | **_`Nombre comercial`_** | **`an..1500`** | `[ ] HBLTD`<br>`[ ] OBGTR` | `[ ] HBLTD`<br>`[ ] OBGTR` | `[X] HBLTD`<br>`[ ] OBGTR`
+***`codUbigeo`*** | **_`Código de UBIGEO,`_**`del domicilio fiscal` <br><br> `Consultar catálogo nro. 13 (Códigos de Ubicación Geográfica) - Anexo 8 SUNAT` | **`n6`** | `[X] HBLTD`<br>`[ ] OBGTR` | `[X] HBLTD`<br>`[ ] OBGTR` | `[X] HBLTD`<br>`[ ] OBGTR`
+***`departamento`*** | **_`Departamento,`_**`del domicilio fiscal` | **`an..30`** | `[X] HBLTD`<br>`[ ] OBGTR` | `[X] HBLTD`<br>`[ ] OBGTR` | `[X] HBLTD`<br>`[ ] OBGTR`
+***`provincia`*** | **_`Provincia,`_**`del domicilio fiscal` | **`an..30`** | `[X] HBLTD`<br>`[ ] OBGTR` | `[X] HBLTD`<br>`[ ] OBGTR` | `[X] HBLTD`<br>`[ ] OBGTR`
+***`distrito`*** | **_`Distrito,`_**`del domicilio fiscal` | **`an..30`** | `[X] HBLTD`<br>`[ ] OBGTR` | `[X] HBLTD`<br>`[ ] OBGTR` | `[X] HBLTD`<br>`[ ] OBGTR`
+***`direccion`*** | **_`Dirección,`_** `completa y detallada del domicilio fiscal` | `Para los comprobantes "01", "03", "07" y "08", la longitud será:`<br>**`an..200`**<br><br>`Para los comprobantes "20" y "40", la longitud será:`<br>**`an..100`** | `[X] HBLTD`<br>`[ ] OBGTR` | `[X] HBLTD`<br>`[ ] OBGTR` | `[X] HBLTD`<br>`[ ] OBGTR`
+***`urbanizacion`*** | **_`Urbanización,`_**`del domicilio fiscal` | `Para los comprobantes "01", "03", "07" y "08", la longitud será:`<br>**`an..25`**<br><br>`Para los comprobantes "20" y "40", la longitud será:`<br>**`an..30`** | `[X] HBLTD`<br>`[ ] OBGTR` | `[X] HBLTD`<br>`[ ] OBGTR` | `[X] HBLTD`<br>`[ ] OBGTR`
+***`codPais`*** | **_`Código de país,`_**`del domicilio fiscal` | **`n2`** | `[X] HBLTD`<br>`[ ] OBGTR` | `[X] HBLTD`<br>`[ ] OBGTR` | `[X] HBLTD`<br>`[ ] OBGTR`
 
 ###  Tabla de campos "{ tributo }"
 
