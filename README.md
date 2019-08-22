@@ -154,7 +154,7 @@ Campo | Descripción | Tipo y longitud | Formato | Habilitado / Obligatorio Fact
 **_`base`_** | _**`Monto base del cargo`**_<br><br>`Monto sobre el cual se aplica la tasa de cargo` | `n(12,2)` | `[X] HBLTD`<br>`[X] OBGTR`
 **_`monto`_** | _**`Monto del cargo`**_ | `n(12,2)` | `[X] HBLTD`<br>`[X] OBGTR`
 
-###  Tabla de campos "{ percepcion }"
+###  ~~Tabla de campos "{ percepcion }"~~
 
 `Campo` | `Descripción` | `Longitud / Formato` | `Percepción`
 :- | :- | :- | :-
@@ -166,7 +166,7 @@ Campo | Descripción | Tipo y longitud | Formato | Habilitado / Obligatorio Fact
 **_`mntPagado`_** | _**`Importe total pagado`**_ | `n(12,2)` | `[X] HBLTD`<br>`[X] OBGTR`
 ~~**_`codMonedaPago`_**~~ | ~~**_`Moneda del importe total pagado`_**<br><br>`El único valor permitido es el siguiente:`<br>**`"PEN" -> Sol`**<br><br>`Si este campo no es enviado, se consignará el valor en función a lo detallado líneas arriba`~~ | `n3` | `[X] HBLTD`<br>`[ ] OBGTR`
 
-###  Tabla de campos "{ retencion }"
+###  ~~Tabla de campos "{ retencion }"~~
 
 `Campo` | `Descripción` | `Longitud / Formato` | `Retención`
 :- | :- | :- | :-
@@ -177,3 +177,30 @@ Campo | Descripción | Tipo y longitud | Formato | Habilitado / Obligatorio Fact
 ~~**_`codMonedaRetencion`_**~~ | ~~**_`Moneda del importe total retenido`_**<br><br>`El único valor permitido es el siguiente:`<br>**`"PEN" -> Sol`**<br><br>`Si este campo no es enviado, se consignará el valor en función a lo detallado líneas arriba`~~ | `n3` | `[X] HBLTD`<br>`[ ] OBGTR`
 **_`mntPagado`_** | _**`Importe total pagado`**_ | `n(12,2)` | `[X] HBLTD`<br>`[X] OBGTR`
 ~~**_`codMonedaPago`_**~~ | ~~**_`Moneda del importe total pagado`_**<br><br>`El único valor permitido es el siguiente:`<br>**`"PEN" -> Sol`**<br><br>`Si este campo no es enviado, se consignará el valor en función a lo detallado líneas arriba`~~ | `n3` | `[X] HBLTD`<br>`[ ] OBGTR`
+
+###  Tabla de campos "{ cabecera }"
+
+`Campo` | `Descripción` | `Longitud / Formato` | `Habilitado` | `Obligatorio`
+:- | :- | :- | :- | :-
+**_`tipoComprobante`_** | **_`Tipo de documento`_**<br><br>`Consultar catálogo nro. 01 (Código de Tipo de Documento) - Anexo 8 SUNAT` | **`n2`** | `01, FA`<br>`03, BV`<br>`07, NC`<br>`08, ND`<br>`20, RET`<br>`40, PER` | `01, FA`<br>`03, BV`<br>`07, NC`<br>`08, ND`<br>`20, RET`<br>`40, PER`
+**_`serieComprobante`_** | **_`Serie`_** | **`an2`** | `01, FA`<br>`03, BV`<br>`07, NC`<br>`08, ND`<br>`20, RET`<br>`40, PER` | `01, FA`<br>`03, BV`<br>`07, NC`<br>`08, ND`<br>`20, RET`<br>`40, PER`
+**_`numeroComprobante`_** | **_`Número correlativo `_** | **`n..8`** | `01, FA`<br>`03, BV`<br>`07, NC`<br>`08, ND`<br>`20, RET`<br>`40, PER` | `01, FA`<br>`03, BV`<br>`07, NC`<br>`08, ND`<br>`20, RET`<br>`40, PER`
+**_`fechaEmision`_** | **_`Fecha de emisión`_** | **`YYYY-MMM-DD`** | `01, FA`<br>`03, BV`<br>`07, NC`<br>`08, ND`<br>`20, RET`<br>`40, PER` | `01, FA`<br>`03, BV`<br>`07, NC`<br>`08, ND`<br>`20, RET`<br>`40, PER`
+**_`horaEmision`_** | **_`Hora de emisión`_** | **`hh:mm:ss`** | `01, FA`<br>`03, BV`<br>`07, NC`<br>`08, ND`<br>`20, RET`<br>`40, PER` | `Ninguno`
+**_`fechaVencimiento`_** | **_`Fecha de vencimiento`_** | **`YYYY-MM-DD`** | `01, FA`<br>`03, BV`<br>`07, NC`<br>`08, ND` | `Ninguno`
+**_`codMoneda`_** | **_`Código del tipo de moneda`_** | **`a3`** | `01, FA`<br>`03, BV`<br>`07, NC`<br>`08, ND`<br>`20, RET`<br>`40, PER` | `01, FA`<br>`03, BV`<br>`07, NC`<br>`08, ND`<br>`20, RET`<br>`40, PER`
+**_`observacion`_** | **_`Observaciones`_** | **`an..250`** | `20, RET`<br>`40, PER` | `Ninguno`
+**_`sustento`_** | **_`Motivo o sustento`_** | **`an..500`** | `07, NC`<br>`08, ND` | `Ninguno`
+**_`tipoNota`_** | **_`Código del tipo de nota de (crédito o débito)`_** | **`n2`** | `07, NC`<br>`08, ND` | `07, NC`<br>`08, ND`
+**_`tipoOperacion`_** | **_`Tipo de operación`_** | **`n2`** | `01, FA`<br>`03, BV` | `01, FA`<br>`03, BV`
+**_`tipoPercepcion`_** | **_`Código de régimen de percepción`_**<br><br>`Consultar catálogo nro. 22 (Código de Régimen de Percepciones) - Anexo 8 SUNAT` | **`n2`** | `40, PER` | `40, PER`
+**_`tasaPercepcion`_** | **_`Porcentaje de percepción`_**<br><br>`El valor consignado deberá estar relacionado al campo`**`tipoPercepcion,`**`teniendo en cuenta lo siguiente:`<br>**`"01" -> 2%`**<br>**`"02" -> 1%`**<br>**`"03" -> 0.5%`**<br><br>`Si este campo NO es enviado, se consignará el valor en función a lo detallado líneas arriba` | **`n(1,2)`** | `40, PER` | `40, PER`
+**_`mntTotalPercibido`_** | **_`Importe total percibido`_** | **`n(12,2)`** | `20, RET` | `20, RET`
+**_`mntTotalCobrado`_** | **_`Importe total cobrado`_** | **`n(12,2)`** | `20, RET` | `20, RET`
+**_`codMonedaCobro`_** | **_`Moneda del importe total cobrado`_**<br><br>`El único valor permitido es el siguiente:`<br>**`"PEN" -> Sol`**<br><br>`Si este campo NO es enviado, se consignará el valor en función a lo detallado líneas arriba` | **`a3`** | `20, RET` | `20, RET`
+**_`tipoRetencion`_** | **_`Código de régimen de retención`_**<br><br>`Consultar catálogo nro. 23 (Código de Régimen de Retenciones) - Anexo 8 SUNAT` | **`n2`** | `20, RET` | `20, RET`
+**_`tasaRetencion`_** | **_`Porcentaje de retenión`_**<br><br>`El valor consignado deberá estar relacionado al campo`**`tipoRetencion,`**`teniendo en cuenta lo siguiente:`<br>**`"01" -> 3%`**<br>**`"02" -> 6%`**<br><br>`Si este campo NO es enviado, se consignará el valor en función a lo detallado líneas arriba` | **`n(1,2)`** | `20, RET` | `20, RET`
+**_`mntTotalRetenido`_** | **_`Importe total retenido`_** | **`n(12,2)`** | `20, RET` | `20, RET`
+**_`mntTotalPagado`_** | **_`Importe total pagado`_** | **`n(12,2)`** | `20, RET` | `20, RET`
+**_`codMonedaPago`_** | **_`Moneda del importe total pagado`_**<br><br>`El único valor permitido es el siguiente:`<br>**`"PEN" -> Sol`**<br><br>`Si este campo NO es enviado, se consignará el valor en función a lo detallado líneas arriba` | **`a3`** | `20, RET` | `20, RET`
+**_`mntRedondeo`_** | **_`Monto de redondeo del importe total`_** | **`a3`** | `01, FA`<br>`03, BV`<br>`07, NC`<br>`08, ND`<br>`20, RET`<br>`40, PER` | `01, FA`<br>`03, BV`<br>`07, NC`<br>`08, ND`<br>`20, RET`<br>`40, PER`
