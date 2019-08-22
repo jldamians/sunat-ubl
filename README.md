@@ -1,4 +1,3 @@
-
 # SUNAT - UBL 2.1
 
 ## Nomenclatura
@@ -154,3 +153,27 @@ Campo | Descripción | Tipo y longitud | Formato | Habilitado / Obligatorio Fact
 **_`tasa`_** | _**`Factor de cargo`**_<br><br>`Se deberá consignar un valor comprendido entre 1% y 100%` | `n(3,5)` | `[X] HBLTD`<br>`[X] OBGTR`
 **_`base`_** | _**`Monto base del cargo`**_<br><br>`Monto sobre el cual se aplica la tasa de cargo` | `n(12,2)` | `[X] HBLTD`<br>`[X] OBGTR`
 **_`monto`_** | _**`Monto del cargo`**_ | `n(12,2)` | `[X] HBLTD`<br>`[X] OBGTR`
+
+###  Tabla de campos "{ percepcion }"
+
+`Campo` | `Descripción` | `Longitud / Formato` | `Percepción`
+:- | :- | :- | :-
+**_`tipoRegimen`_** | **_`Código del régimen de percepción`_**<br><br>`Consultar catálogo nro. 22 (Código de Régimen de Percepciones) - Anexo 8 SUNAT` | `n2` | `[X] HBLTD`<br>`[X] OBGTR`
+~~**_`tasa`_**~~ | ~~_**`Tasa de percepción`**_<br><br>`El valor consignado deberá estar relacionado al campo`**`tipoRegimen,`**`teniendo en cuenta lo siguiente:`<br>**`"01" -> 2%`**<br>**`"02" -> 1%`**<br>**`"03" -> 0.5%`**<br><br>`Si este campo no es enviado, se consignará el valor en función a lo detallado líneas arriba`~~ | `n(1,2)` | `[X] HBLTD`<br>`[ ] OBGTR`
+**_`observacion`_** | **_`Observaciones`_** | `an..250` | `[X] HBLTD`<br>`[ ] OBGTR`
+**_`mntPercibido`_** | _**`Importe total percibido`**_ | `n(12,2)` | `[X] HBLTD`<br>`[X] OBGTR`
+~~**_`codMonedaPercepcion`_**~~ | ~~**_`Moneda del importe total percibido`_**<br><br>`El único valor permitido es el siguiente:`<br>**`"PEN" -> Sol`**<br><br>`Si este campo no es enviado, se consignará el valor en función a lo detallado líneas arriba`~~ | `n3` | `[X] HBLTD`<br>`[ ] OBGTR`
+**_`mntPagado`_** | _**`Importe total pagado`**_ | `n(12,2)` | `[X] HBLTD`<br>`[X] OBGTR`
+~~**_`codMonedaPago`_**~~ | ~~**_`Moneda del importe total pagado`_**<br><br>`El único valor permitido es el siguiente:`<br>**`"PEN" -> Sol`**<br><br>`Si este campo no es enviado, se consignará el valor en función a lo detallado líneas arriba`~~ | `n3` | `[X] HBLTD`<br>`[ ] OBGTR`
+
+###  Tabla de campos "{ retencion }"
+
+`Campo` | `Descripción` | `Longitud / Formato` | `Retención`
+:- | :- | :- | :-
+**_`tipoRegimen`_** | **_`Código del régimen de retención`_**<br><br>`Consultar catálogo nro. 23 (Código de Régimen de Retenciones) - Anexo 8 SUNAT` | `n2` | `[X] HBLTD`<br>`[X] OBGTR`
+~~**_`tasa`_**~~ | ~~_**`Tasa de retención`**_<br><br>`El valor consignado deberá estar relacionado al campo`**`tipoRegimen,`**`teniendo en cuenta lo siguiente:`<br>**`"01" -> 3%`**<br>**`"02" -> 6%`**<br><br>`Si este campo no es enviado, se consignará el valor en función a lo detallado líneas arriba`~~ | `n(1,2)` | `[X] HBLTD`<br>`[ ] OBGTR`
+**_`observacion`_** | **_`Observaciones`_** | `an..250` | `[X] HBLTD`<br>`[ ] OBGTR`
+**_`mntRetenido`_** | _**`Importe total retenido`**_ | `n(12,2)` | `[X] HBLTD`<br>`[X] OBGTR`
+~~**_`codMonedaRetencion`_**~~ | ~~**_`Moneda del importe total retenido`_**<br><br>`El único valor permitido es el siguiente:`<br>**`"PEN" -> Sol`**<br><br>`Si este campo no es enviado, se consignará el valor en función a lo detallado líneas arriba`~~ | `n3` | `[X] HBLTD`<br>`[ ] OBGTR`
+**_`mntPagado`_** | _**`Importe total pagado`**_ | `n(12,2)` | `[X] HBLTD`<br>`[X] OBGTR`
+~~**_`codMonedaPago`_**~~ | ~~**_`Moneda del importe total pagado`_**<br><br>`El único valor permitido es el siguiente:`<br>**`"PEN" -> Sol`**<br><br>`Si este campo no es enviado, se consignará el valor en función a lo detallado líneas arriba`~~ | `n3` | `[X] HBLTD`<br>`[ ] OBGTR`
