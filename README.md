@@ -210,3 +210,48 @@ Abreviatura | Descripción
 **_`imptRedondeo`_** | **_`Monto de redondeo del importe total`_** | **`n(12,2)`** | `01, FA`<br>`03, BV`<br>`07, NC`<br>`08, ND`<br>`20, RET`<br>`40, PER` | `Ninguno`
 **_`imptTotalDescuento`_** | **_`Sumatoria otros descuentos,`_**`que no afectan la base imponible` | **`n(12,2)`** | `01, FA`<br>`03, BV`<br>`07, NC`<br>`08, ND` | `Ninguno`
 **_`imptTotalCargo`_** | **_`Sumatoria otros cargos,`_**`que no afectan la base imponible` | **`n(12,2)`** | `01, FA`<br>`03, BV`<br>`07, NC`<br>`08, ND` | `Ninguno`
+
+###  Tabla de campos "[{ retenciones }]"
+
+`Campo` | `Descripción` | `Longitud / Formato` | `Habilitado` | `Obligatorio`
+:- | :- | :- | :- | :-
+**_`tipoComprobante`_** | **_`Tipo de comprobante relacionado`_**<br><br>`Consultar catálogo nro. 01 (Código de Tipo de Documento) - Anexo 8 SUNAT` | `n2` | `20, RET` | `20, RET`
+**_`serieComprobante`_** | _**`Serie del comprobante relacionado`**_ | `an4` | `20, RET` | `20, RET`
+**_`numeroComprobante`_** | **_`Número del comprobante relacionado`_** | `n..8` | `20, RET` | `20, RET`
+**_`fechaEmision`_** | _**`Importe total retenido`**_ | `YYYY-MM-DD`  | `20, RET` | `20, RET`
+**_`imptTotalVenta`_** | **_`Importe total del documento relacionado`_** | `n(12,2)` | `20, RET` | `20, RET`
+**_`codMoneda`_** | _**`Tipo de moneda del documento relacionado`**_ | `a3` | `20, RET` | `20, RET`
+**_`fechaPago`_** | **_`Fecha de pago`_** | `YYYY-MM-DD` | `20, RET` | `20, RET`
+**_`numeroPago`_** | **_`Número de pago`_** | `n..9` | `20, RET` | `20, RET`
+**_`imptPago`_** | **_`Importe del pago sin retención`_** | `n(12,2)` | `20, RET` | `20, RET`
+**_`codMonedaPago`_** | **_`Moneda del importe del pago sin retención`_** | `a3` | `20, RET` | `20, RET`
+**_`imptRetenido`_** | **_`Importe retenido`_** | `n(12,2)` | `20, RET` | `20, RET`
+**_`fechaRetencion`_** | **_`Fecha de retención`_** | `YYYY-MM-DD` | `20, RET` | `20, RET`
+**_`imptNetoPagar`_** | **_`Importe total a pagar (neto)`_** | `n(12,2)` | `20, RET` | `20, RET`
+**_`codMonedaOrigen`_** | **_`Moneda de origen para el tipo de cambio`_** | `a3` | `20, RET` | `Ninguno `
+**_`codMonedaDestino`_** | **_`Moneda de destino para el tipo de cambio`_** | `a3` | `20, RET` | `Ninguno`
+**_`tasaCambio`_** | **_`Factor aplicado a la moneda de origen`_** | `n(4,6)` | `20, RET` | `Ninguno`
+**_`fechaCambio`_** | **_`Fecha de tipo de cambio`_** | `YYYY-MM-DD` | `20, RET` | `Ninguno`
+
+
+###  Tabla de campos "[{ percepciones }]"
+
+`Campo` | `Descripción` | `Longitud / Formato` | `Habilitado` | `Obligatorio`
+:- | :- | :- | :- | :-
+**_`tipoComprobante`_** | **_`Tipo de comprobante relacionado`_**<br><br>`Consultar catálogo nro. 01 (Código de Tipo de Documento) - Anexo 8 SUNAT` | `n2` | `40, PER` | `40, PER`
+**_`serieComprobante`_** | _**`Serie del comprobante relacionado`**_ | `an4` | `40, PER` | `40, PER`
+**_`numeroComprobante`_** | **_`Número del comprobante relacionado`_** | `n..8` | `40, PER` | `40, PER`
+**_`fechaEmision`_** | _**`Importe total retenido`**_ | `YYYY-MM-DD`  | `40, PER` | `40, PER`
+**_`imptTotalVenta`_** | **_`Importe total del documento relacionado`_** | `n(12,2)` | `40, PER` | `40, PER`
+**_`codMoneda`_** | _**`Tipo de moneda del documento relacionado`**_ | `a3` | `40, PER` | `40, PER`
+**_`fechaCobro`_** | **_`Fecha de cobro`_** | `YYYY-MM-DD` | `40, PER` | `40, PER`
+**_`numeroCobro`_** | **_`Número de cobro`_** | `n..9` | `40, PER` | `40, PER`
+**_`imptCobro`_** | **_`Importe del cobro sin percepción`_** | `n(12,2)` | `40, PER` | `40, PER`
+**_`codMonedaCobro`_** | **_`Moneda del importe del cobro sin percepción`_** | `a3` | `40, PER` | `40, PER`
+**_`imptPercibido`_** | **_`Importe percibido`_** | `n(12,2)` | `40, PER` | `40, PER`
+**_`fechaPercepcion`_** | **_`Fecha de percepción`_** | `YYYY-MM-DD` | `40, PER` | `40, PER`
+**_`imptNetoCobrar`_** | **_`Importe total a cobrar (neto)`_** | `n(12,2)` | `40, PER` | `40, PER`
+**_`codMonedaOrigen`_** | **_`Moneda de origen para el tipo de cambio`_** | `a3` | `40, PER` | `Ninguno `
+**_`codMonedaDestino`_** | **_`Moneda de destino para el tipo de cambio`_** | `a3` | `40, PER` | `Ninguno`
+**_`tasaCambio`_** | **_`Tipo de cambio,`_**`factor aplicado a la moneda de origen para calcular la moneda de destino` | `n(4,6)` | `40, PER` | `Ninguno`
+**_`fechaCambio`_** | **_`Fecha de tipo de cambio`_** | `YYYY-MM-DD` | `40, PER` | `Ninguno`
