@@ -27,9 +27,11 @@
   },
   "homepage": "https://github.com/jldamians/sunat-ubl#readme",
   "dependencies": {
+    "dir-require": "^1.0.4",
     "lodash.pick": "^4.4.0",
     "numeral": "^2.0.6",
     "require-dir": "^1.2.0",
+    "ubigeos": "^1.0.2",
     "xmlbuilder": "^13.0.2"
   },
   "devDependencies": {
