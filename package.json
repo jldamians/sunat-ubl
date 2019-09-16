@@ -16,9 +16,15 @@
     "url": "git+https://github.com/jldamians/sunat-ubl.git"
   },
   "keywords": [
-    "CPE",
-    "UBL",
-    "UBL 2.1"
+    "sunat",
+    "jldamians",
+    "cpe",
+    "ubl",
+    "ubl 2.1",
+    "ubl 2.0",
+    "pse",
+    "ose",
+    "peru"
   ],
   "author": "jldamians <jlds161089@gmail.com>",
   "license": "ISC",
@@ -31,7 +37,7 @@
     "lodash.pick": "^4.4.0",
     "numeral": "^2.0.6",
     "require-dir": "^1.2.0",
-    "ubigeos": "^1.0.2",
+    "sunat-catalogs": "^1.0.1",
     "xmlbuilder": "^13.0.2"
   },
   "devDependencies": {
