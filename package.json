@@ -37,7 +37,7 @@
     "lodash.pick": "^4.4.0",
     "numeral": "^2.0.6",
     "require-dir": "^1.2.0",
-    "sunat-catalogs": "^1.0.1",
+    "sunat-catalogs": "^1.0.3",
     "xmlbuilder": "^13.0.2"
   },
   "devDependencies": {
