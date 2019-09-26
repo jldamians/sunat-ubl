@@ -9,7 +9,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "./node_modules/mocha/bin/mocha"
   },
   "repository": {
     "type": "git",
@@ -37,10 +37,11 @@
     "lodash.pick": "^4.4.0",
     "numeral": "^2.0.6",
     "require-dir": "^1.2.0",
-    "sunat-catalogs": "^1.0.3",
+    "sunat-catalogs": "^1.0.5",
     "xmlbuilder": "^13.0.2"
   },
   "devDependencies": {
-    "eslint": "^6.0.0"
+    "chai": "^4.2.0",
+    "mocha": "^6.1.4"
   }
 }
