@@ -14,7 +14,7 @@ const {
   Emisor,
   Receptor,
   Direccion,
-  TipoCambio,
+  //TipoCambio,
   CPERetencion,
   DetalleRetencion,
   ComprobanteRelacionado,
@@ -61,31 +61,31 @@ retention.receptor = new Receptor(
   )
 );
 
-const comprobante = new ComprobanteRelacionado(
-  /*TipoDocumento.FA, 'F100', 100, '2019-09-01', 1000.00, TipoMoneda.DOLAR*/
+/*const comprobante = new ComprobanteRelacionado(
+  //TipoDocumento.FA, 'F100', 100, '2019-09-01', 1000.00, TipoMoneda.DOLAR
 );
 
 comprobante.tipoCpe = TipoDocumento.FA;
 comprobante.serie = 'F100';
-comprobante.numero = 1000;
+comprobante.numero = 100;
 comprobante.fechaEmision = '2019-09-01';
 comprobante.imptTotalVenta = 1000.00;
-comprobante.codMonedaVenta = TipoMoneda.DOLAR;
+comprobante.codMonedaVenta = TipoMoneda.DOLAR;*/
 
-const cambio = new TipoCambio(
-  /*TipoMoneda.DOLAR, TipoMoneda.SOL, 3.00, '2019-09-01'*/
+/*const cambio = new TipoCambio(
+  TipoMoneda.DOLAR, TipoMoneda.SOL, 3.00, '2019-09-01'
 );
 
 cambio.codMonedaOrigen = TipoMoneda.DOLAR;
 cambio.codMonedaDestino = TipoMoneda.SOL;
 cambio.tasa = 3.00;
-cambio.fecha = '2019-09-01';
+cambio.fecha = '2019-09-01';*/
 
 const detalle = new DetalleRetencion(
   /*comprobante, '2019-09-01', 1, 1000.00, TipoMoneda.DOLAR, 90.00, '2019-09-01', 2910.00, cambio*/
 );
 
-detalle.cpe = comprobante;
+//detalle.cpe = comprobante;
 detalle.fechaPago = '2019-09-01';
 detalle.numeroPago = 1;
 detalle.imptPago = 1000.00;
@@ -93,7 +93,9 @@ detalle.codMonedaPago = TipoMoneda.DOLAR;
 detalle.imptRetenido = 90.00;
 detalle.fechaRetencion = '2019-09-01';
 detalle.imptPagado = 2910.00;
-detalle.tipoCambio = cambio;
+//detalle.tipoCambio = cambio;
+detalle.definirRef(TipoDocumento.FA, 'F100', 100, '2019-09-01', 1000.00, TipoMoneda.DOLAR);
+detalle.definirTc(3.00, '2019-09-24');
 
 retention.agregarDet(detalle);
 
