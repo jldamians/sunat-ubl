@@ -11,95 +11,66 @@ const {
 const ubl = require('../lib');
 
 const {
-  Emisor,
-  Receptor,
-  Direccion,
-  //TipoCambio,
   CPERetencion,
-  DetalleRetencion,
-  ComprobanteRelacionado,
 } = ubl;
 
 const regimen = new RegimenRetencion(RegimenRetencion.TASA_3);
 
-const retention = new CPERetencion(
-  regimen.codigoCat, 'R001', 1000, '2019-01-11', '10:30:00'
-  /*, regimen.tasa(), 'Cpes Periodo 201909', 60.00, 3060.00, 0.23*/
-);
+const retencion = new CPERetencion('R001', 1000, '2019-01-11', '10:30:00');
 
-retention.tasa = regimen.tasa();
-retention.observacion = 'Cpes correspondientes al periodo 201909';
-retention.imptTotalRetenido = 90.00;
-retention.imptTotalPagado = 2910.00;
-retention.imptRedondeo = 0.23;
+retencion.definirRgm(regimen.codigoCat, regimen.tasa(), 'Periodo 201909', 90.00, 2910.00, 0.23);
 
-retention.emisor = new Emisor(
+retencion.definirEms(
   TipoDocumentoIdentidad.RUC,
   '20600543050',
   'FACTURACTIVA DEL PERU S.A.C.',
-  'FACTURACTIVA',
-  new Direccion(
-    '150122',
-    null,
-    Pais.PERU,
-    'CAL. ALFONSO UGARTE NRO. 349 INT. 201',
-    'UBR. MUNICIPAL'
-  )
+  'FACTURACTIVA'
 );
 
-retention.receptor = new Receptor(
+retencion.defDireccionEms(
+  '150122',
+  Pais.PERU,
+  'CAL. ALFONSO UGARTE NRO. 349 INT. 201',
+  'UBR. MUNICIPAL'
+);
+
+retencion.definirPro(
   TipoDocumentoIdentidad.RUC,
   '20504561292',
   'TAM CONSULTORES S.A.C.',
-  'TAM CONSULTORES',
-  new Direccion(
-    '150115',
-    null,
-    Pais.PERU,
-    'AV. BUENA VISTA NRO. 393 DPTO. 301',
-    'UBR. SAN RAFAEL'
-  )
+  'TAM CONSULTORES'
 );
 
-/*const comprobante = new ComprobanteRelacionado(
-  //TipoDocumento.FA, 'F100', 100, '2019-09-01', 1000.00, TipoMoneda.DOLAR
+retencion.defDireccionPro(
+  '150115',
+  Pais.PERU,
+  'AV. BUENA VISTA NRO. 393 DPTO. 301',
+  'UBR. SAN RAFAEL'
 );
 
-comprobante.tipoCpe = TipoDocumento.FA;
-comprobante.serie = 'F100';
-comprobante.numero = 100;
-comprobante.fechaEmision = '2019-09-01';
-comprobante.imptTotalVenta = 1000.00;
-comprobante.codMonedaVenta = TipoMoneda.DOLAR;*/
+retencion.agregarDet(
+  TipoDocumento.FA, // tipo cpe relacionado
+  'F100', // serie cpe relacionado
+  100, // número cpe relacionado
+  '2019-09-01', // fecha emisión cpe relacionado
+  1000.00, // importe total cpe relacionado
+  TipoMoneda.DOLAR, // tipo moneda cpe relacionado
 
-/*const cambio = new TipoCambio(
-  TipoMoneda.DOLAR, TipoMoneda.SOL, 3.00, '2019-09-01'
+  '2019-09-01', // fecha pago
+  1, // número pago
+  1000.00, // importe de pago sin retención
+
+  90.00, // importe retenido
+  '2019-09-01', // fecha retención
+  2910.00, // importe total a pagar
+
+  TipoMoneda.DOLAR, // moneda de origen
+  TipoMoneda.SOL, // moneda de destino
+  3.00, // tipo de cambio
+  '2019-09-01' // fecha tipo cambio
 );
 
-cambio.codMonedaOrigen = TipoMoneda.DOLAR;
-cambio.codMonedaDestino = TipoMoneda.SOL;
-cambio.tasa = 3.00;
-cambio.fecha = '2019-09-01';*/
-
-const detalle = new DetalleRetencion(
-  /*comprobante, '2019-09-01', 1, 1000.00, TipoMoneda.DOLAR, 90.00, '2019-09-01', 2910.00, cambio*/
-);
-
-//detalle.cpe = comprobante;
-detalle.fechaPago = '2019-09-01';
-detalle.numeroPago = 1;
-detalle.imptPago = 1000.00;
-detalle.codMonedaPago = TipoMoneda.DOLAR;
-detalle.imptRetenido = 90.00;
-detalle.fechaRetencion = '2019-09-01';
-detalle.imptPagado = 2910.00;
-//detalle.tipoCambio = cambio;
-detalle.definirRef(TipoDocumento.FA, 'F100', 100, '2019-09-01', 1000.00, TipoMoneda.DOLAR);
-detalle.definirTc(3.00, '2019-09-24');
-
-retention.agregarDet(detalle);
-
-const xml = ubl(retention);
+const xml = ubl(retencion);
 
 console.log(`${xml}`);
 
