@@ -6,7 +6,7 @@ const { TipoMoneda } = require('sunat-catalogs');
 
 const TipoCambio = require('../lib/clases/TipoCambio');
 
-describe('clase.TipoCambio(codMonedaOrigen, codMonedaDestino, tasa, fecha)', () => {
+describe('clase.TipoCambio(codMonedaOrigen, codMonedaDestino, tasaCambio, fechaCambio)', () => {
   const cambio01 = new TipoCambio();
   const cambio02 = new TipoCambio(TipoMoneda.DOLAR, TipoMoneda.SOL, 3.35, '2019-09-24');
 
@@ -47,37 +47,37 @@ describe('clase.TipoCambio(codMonedaOrigen, codMonedaDestino, tasa, fecha)', () 
     });
   });
 
-  describe('#.fecha', () => {
+  describe('#.fechaCambio', () => {
     it('Debería existir el atributo', () => {
-      assert.property(TipoCambio.prototype, 'fecha');
-      assert.property(cambio01, 'fecha');
+      assert.property(TipoCambio.prototype, 'fechaCambio');
+      assert.property(cambio01, 'fechaCambio');
     });
 
     it('Debería retornar un valor nulo', () => {
-      assert.isNull(cambio01.fecha);
+      assert.isNull(cambio01.fechaCambio);
     });
 
     it('Debería retornar un valor válido', () => {
-      assert.isNotNull(cambio02.fecha);
-      assert.isString(cambio02.fecha);
-      assert.propertyVal(cambio02, 'fecha', '2019-09-24');
+      assert.isNotNull(cambio02.fechaCambio);
+      assert.isString(cambio02.fechaCambio);
+      assert.propertyVal(cambio02, 'fechaCambio', '2019-09-24');
     });
   });
 
-  describe('#.tasa', () => {
+  describe('#.tasaCambio', () => {
     it('Debería existir el atributo', () => {
-      assert.property(TipoCambio.prototype, 'tasa');
-      assert.property(cambio01, 'tasa');
+      assert.property(TipoCambio.prototype, 'tasaCambio');
+      assert.property(cambio01, 'tasaCambio');
     });
 
     it('Debería retornar un valor nulo', () => {
-      assert.isNull(cambio01.tasa);
+      assert.isNull(cambio01.tasaCambio);
     });
 
     it('Debería retornar un valor válido', () => {
-      assert.isNotNull(cambio02.tasa);
-      assert.isNumber(cambio02.tasa);
-      assert.propertyVal(cambio02, 'tasa', 3.35);
+      assert.isNotNull(cambio02.tasaCambio);
+      assert.isNumber(cambio02.tasaCambio);
+      assert.propertyVal(cambio02, 'tasaCambio', 3.35);
     });
   });
 });

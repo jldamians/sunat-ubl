@@ -2,11 +2,13 @@
 
 const { assert } = require('chai');
 
-const { TipoDocumento, TipoMoneda } = require('sunat-catalogs');
+const {
+  TipoDocumento,
+} = require('sunat-catalogs');
 
 const CPERetencion = require('../lib/clases/CPERetencion');
 
-describe('clase.CPERetencion(tipoRegimen, serie, numero, fechaEmision, horaEmision, tasa, observacion, imptTotalRetenido, imptTotalPagado, imptRedondeo)', () => {
+describe('clase.CPERetencion(serie, numero, fechaEmision, horaEmision)', () => {
   const retencion = new CPERetencion();
 
   it('Debería ser una clase', () => {
@@ -14,10 +16,15 @@ describe('clase.CPERetencion(tipoRegimen, serie, numero, fechaEmision, horaEmisi
     assert.isObject(CPERetencion.prototype);
   });
 
-  describe('#.tipoRegimen', () => {
+  describe('#.tipoCpe', () => {
     it('Debería existir el atributo', () => {
-      assert.property(CPERetencion.prototype, 'tipoRegimen');
-      assert.property(retencion, 'tipoRegimen');
+      assert.property(CPERetencion.prototype, 'tipoCpe');
+      assert.property(retencion, 'tipoCpe');
+    });
+    it(`Debería retornar el valor "${TipoDocumento.CPER}"`, () => {
+      assert.isNotNull(retencion.tipoCpe);
+      assert.isString(retencion.tipoCpe);
+      assert.propertyVal(retencion, 'tipoCpe', TipoDocumento.CPER);
     });
   });
 
@@ -49,10 +56,17 @@ describe('clase.CPERetencion(tipoRegimen, serie, numero, fechaEmision, horaEmisi
     });
   });
 
-  describe('#.tasa', () => {
+  describe('#.tipoRegimen', () => {
     it('Debería existir el atributo', () => {
-      assert.property(CPERetencion.prototype, 'tasa');
-      assert.property(retencion, 'tasa');
+      assert.property(CPERetencion.prototype, 'tipoRegimen');
+      assert.property(retencion, 'tipoRegimen');
+    });
+  });
+
+  describe('#.tasaRegimen', () => {
+    it('Debería existir el atributo', () => {
+      assert.property(CPERetencion.prototype, 'tasaRegimen');
+      assert.property(retencion, 'tasaRegimen');
     });
   });
 
