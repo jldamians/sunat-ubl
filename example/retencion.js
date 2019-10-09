@@ -20,7 +20,7 @@ const retencion = new CPERetencion('R001', 1000, '2019-01-11', '10:30:00');
 
 retencion.definirRgm(regimen.codigoCat, regimen.tasa(), 'Periodo 201909', 90.00, 2910.00, 0.23);
 
-retencion.definirEms(
+retencion.defEmisor(
   TipoDocumentoIdentidad.RUC,
   '20600543050',
   'FACTURACTIVA DEL PERU S.A.C.',
@@ -34,14 +34,14 @@ retencion.defDireccionEms(
   'UBR. MUNICIPAL'
 );
 
-retencion.definirPro(
+retencion.defReceptor(
   TipoDocumentoIdentidad.RUC,
   '20504561292',
   'TAM CONSULTORES S.A.C.',
   'TAM CONSULTORES'
 );
 
-retencion.defDireccionPro(
+retencion.defDireccionRec(
   '150115',
   Pais.PERU,
   'AV. BUENA VISTA NRO. 393 DPTO. 301',

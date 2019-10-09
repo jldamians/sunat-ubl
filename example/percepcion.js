@@ -20,7 +20,7 @@ const percepcion = new CPEPercepcion('P001', 1000, '2019-01-11', '10:30:00');
 
 percepcion.definirRgm(regimen.codigoCat, regimen.tasa(), 'Periodo 201909', 60.00, 3060.00, 0.23);
 
-percepcion.definirEms(
+percepcion.defEmisor(
   TipoDocumentoIdentidad.RUC,
   '20600543050',
   'FACTURACTIVA DEL PERU S.A.C.',
@@ -34,14 +34,14 @@ percepcion.defDireccionEms(
   'UBR. MUNICIPAL'
 );
 
-percepcion.definirCli(
+percepcion.defReceptor(
   TipoDocumentoIdentidad.RUC,
   '20504561292',
   'TAM CONSULTORES S.A.C.',
   'TAM CONSULTORES'
 );
 
-percepcion.defDireccionCli(
+percepcion.defDireccionRec(
   '150115',
   Pais.PERU,
   'AV. BUENA VISTA NRO. 393 DPTO. 301',
