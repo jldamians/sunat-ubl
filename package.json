@@ -38,7 +38,7 @@
     "moment": "^2.24.0",
     "numeral": "^2.0.6",
     "require-dir": "^1.2.0",
-    "sunat-catalogs": "^1.0.5",
+    "sunat-catalogs": "^1.0.6",
     "xmlbuilder": "^13.0.2"
   },
   "devDependencies": {
