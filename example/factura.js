@@ -3,10 +3,13 @@
 const {
   Pais,
   TipoMoneda,
+  TipoDocumento,
   TipoOperacion,
-  TipoAfectacionIgv,
-  TipoDocumentoIdentidad,
+  CargoDescuento,
   TipoUnidadMedida,
+  TipoAfectacionIgv,
+  DocumentoRelacionado,
+  TipoDocumentoIdentidad,
 } = require('sunat-catalogs');
 
 const ubl = require('../lib');
@@ -17,7 +20,13 @@ const {
 } = ubl;
 
 const factura = new CPEFactura(
-  TipoOperacion.VENTA_INTERNA, 'F001', 1000, '2019-09-21', '10:35:15', '2019-09-30', TipoMoneda.SOL
+  TipoOperacion.VENTA_INTERNA, // tipo de operación
+  'F001', // serie
+  1000, // número correlativo
+  '2019-09-21', // fecha emisión
+  '10:35:15', // hora emisión
+  '2019-09-30', // fecha vencimiento
+  TipoMoneda.SOL // tipo de moneda
 );
 
 factura.defEmisor(
@@ -48,22 +57,59 @@ factura.defDireccionRec(
   'UBR. SAN RAFAEL'
 );
 
-factura.defImportesTot(3777.60, 3299.68, 3777.60, 576.92);
+factura.defImportesTot(
+  3777.60, // total precio de venta
+  3299.68, // total valor de venta
+  3777.60, // importe total de la venta
+  576.92 // monto total de tributos
+);
 
-factura.agrImpuestoIgv(3200.68, 576.12);
+factura.agrImpuestoIgv(
+  3200.68, // total valor de venta operaciones gravadas
+  576.12 // monto de la sumatoria de igv o ivap
+);
 
-factura.agrImpuestoIcbper(8.00, 0.80);
+factura.agrImpuestoIcbper(
+  8.00, // monto base
+  0.80 // monto de la sumatoria
+);
+
+factura.agrComprobanteAnt(DocumentoRelacionado.FA_ANTICIPO, 'F001', 1, 2500, '2019-10-01');
+
+factura.agrComprobanteRel(DocumentoRelacionado.FA_CORREGIR_RUC, 'FPR1', 1);
+factura.agrComprobanteRel(DocumentoRelacionado.FA_CORREGIR_RUC, 'FPR1', 2);
+
+factura.agrComprobanteDes(TipoDocumento.GRR, 'RPR1', 1);
+factura.agrComprobanteDes(TipoDocumento.GRR, 'RPR1', 2);
+
+factura.agrComprobanteDes(TipoDocumento.GRT, 'TPR1', 1);
+factura.agrComprobanteDes(TipoDocumento.GRT, 'TPR1', 2);
+
+factura.defDescuento(CargoDescuento.DCTOS_GLOBAL_AFECTA_BASE_IGV_IVAP, 0.10, 1500.00, 150.00);
+
+factura.defCargo(CargoDescuento.CARGOS_GLOBAL_AFECTA_BASE_IGV_IVAP, 0.05, 1500.00, 75.00);
 
 // DETALLE 01
 const det01 = new DetalleFactura(
-  '20191001', 'TÓNER IMPRESORA', TipoUnidadMedida.UNIDAD_INTERNACIONAL, 16, 200.00, 3200.00, 576.00
+  '20191001', // código de producto
+  'TÓNER IMPRESORA', // descripción detallada
+  TipoUnidadMedida.UNIDAD_INTERNACIONAL, // unidad de medida por ítem
+  16, // cantidad de unidades por ítem
+  200.00, // valor unitario por ítem
+  3200.00, // valor de venta po ítem
+  576.00 // monto total de tributos por ítem
 );
 
-det01.defCodUnspsc('24111503');
+det01.defCodUnspsc('24111503'); // código de producto sunat
 
-det01.defPrecioUnit(236.00);
+det01.defPrecioUnit(236.00); // precio de venta unitario por ítem
 
-det01.agrImpuestoIgv(TipoAfectacionIgv.GRAVADO_ONEROSA, 3200.00, 0.18, 576.00);
+det01.agrImpuestoIgv(
+  TipoAfectacionIgv.GRAVADO_ONEROSA, // afectación al igv o ivap
+  3200.00, // monto base
+  0.18, // tasa de igv o ivap
+  576.00 // monto de tributo
+);
 
 // DETALLE 02
 const det02 = new DetalleFactura(
@@ -74,7 +120,12 @@ det02.defCodUnspsc('24111503');
 
 det02.defPrecioUnit(0.10);
 
-det02.agrImpuestoIgv(TipoAfectacionIgv.GRAVADO_ONEROSA, 0.68, 0.18, 0.12);
+det02.agrImpuestoIgv(
+  TipoAfectacionIgv.GRAVADO_ONEROSA,
+  0.68,
+  0.18,
+  0.12
+);
 
 det02.agrImpuestoIcbper(8.00, 0.10, 0.80);
 
