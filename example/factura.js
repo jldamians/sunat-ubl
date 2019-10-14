@@ -142,6 +142,8 @@ det02.agrImpuestoIgv(
 
 det02.agrImpuestoIcbper(8.00, 0.10, 0.80);
 
+det02.defGastosNroPlaca('ABC-123');
+
 factura.agrDetalle(det01);
 factura.agrDetalle(det02);
 
