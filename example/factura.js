@@ -57,12 +57,24 @@ factura.defDireccionRec(
   'UBR. SAN RAFAEL'
 );
 
-factura.defImportesTot(
+/*factura.defImportesTot(
   3777.60, // total precio de venta
   3299.68, // total valor de venta
   3777.60, // importe total de la venta
   576.92 // monto total de tributos
-);
+);*/
+
+// total precio de venta
+factura.defImptPrecioTot(3777.60);
+
+// total valor de venta
+factura.defImptValorTot(3299.68);
+
+// importe total de la venta
+factura.defImptVentaTot(3777.60);
+
+// monto total de tributos
+factura.defImptTributoTot(576.92);
 
 factura.agrImpuestoIgv(
   3200.68, // total valor de venta operaciones gravadas
@@ -74,10 +86,11 @@ factura.agrImpuestoIcbper(
   0.80 // monto de la sumatoria
 );
 
-factura.agrComprobanteAnt(DocumentoRelacionado.FA_ANTICIPO, 'F001', 1, 2500, '2019-10-01');
+factura.agrComprobanteAnt(DocumentoRelacionado.FA_ANTICIPO, 'F001', 1, 1800.00, '2019-10-01');
+factura.agrComprobanteAnt(DocumentoRelacionado.FA_ANTICIPO, 'F001', 2, 2100.00, '2019-10-01');
 
-factura.agrComprobanteRel(DocumentoRelacionado.FA_CORREGIR_RUC, 'FPR1', 1);
-factura.agrComprobanteRel(DocumentoRelacionado.FA_CORREGIR_RUC, 'FPR1', 2);
+factura.agrComprobanteRel(DocumentoRelacionado.FA_CORREGIR_RUC, 'FPR2', 1);
+factura.agrComprobanteRel(DocumentoRelacionado.FA_CORREGIR_RUC, 'FPR2', 2);
 
 factura.agrComprobanteDes(TipoDocumento.GRR, 'RPR1', 1);
 factura.agrComprobanteDes(TipoDocumento.GRR, 'RPR1', 2);
