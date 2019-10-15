@@ -102,6 +102,8 @@ factura.defDescuento(CargoDescuento.DCTOS_GLOBAL_AFECTA_BASE_IGV_IVAP, 0.10, 150
 
 factura.defCargo(CargoDescuento.CARGOS_GLOBAL_AFECTA_BASE_IGV_IVAP, 0.05, 1500.00, 75.00);
 
+factura.defNroOrdenCompra('0001-301');
+
 // DETALLE 01
 const det01 = new DetalleFactura(
   '20191001', // código de producto
