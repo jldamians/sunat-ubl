@@ -16,9 +16,23 @@ const {
 
 const regimen = new RegimenRetencion(RegimenRetencion.TASA_3);
 
-const retencion = new CPERetencion('R001', 1000, '2019-01-11', '10:30:00');
+const retencion = new CPERetencion(
+  regimen.codigoCat,
+  'R001',
+  1000,
+  '2019-01-11',
+  '10:30:00'
+);
 
-retencion.definirRgm(regimen.codigoCat, regimen.tasa(), 'Periodo 201909', 90.00, 2910.00, 0.23);
+retencion.defTasaRegimen(regimen.tasa());
+
+retencion.defObservacion('Periodo 201909');
+
+retencion.defImptRetenidoTot(90.00);
+
+retencion.defImptPagadoTot(2910.00);
+
+retencion.defImptRedondeo(0.23);
 
 retencion.defEmisor(
   TipoDocumentoIdentidad.RUC,

@@ -16,9 +16,23 @@ const {
 
 const regimen = new RegimenPercepcion(RegimenPercepcion.VENTA_INTERNA);
 
-const percepcion = new CPEPercepcion('P001', 1000, '2019-01-11', '10:30:00');
+const percepcion = new CPEPercepcion(
+  regimen.codigoCat,
+  'P001',
+  1000,
+  '2019-01-11',
+  '10:30:00'
+);
 
-percepcion.definirRgm(regimen.codigoCat, regimen.tasa(), 'Periodo 201909', 60.00, 3060.00, 0.23);
+percepcion.defTasaRegimen(regimen.tasa());
+
+percepcion.defObservacion('Periodo 201909');
+
+percepcion.defImptPercibidoTot(60.00);
+
+percepcion.defImptCobradoTot(3060.00);
+
+percepcion.defImptRedondeo(0.23);
 
 percepcion.defEmisor(
   TipoDocumentoIdentidad.RUC,
