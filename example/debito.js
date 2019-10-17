@@ -47,6 +47,19 @@ debito.defReceptor(
   'TAM CONSULTORES S.A.C.'
 );
 
+// monto total de tributos
+debito.defImptTributoTot(576.92);
+
+debito.agrImpuestoIgv(
+  3200.68, // total valor de venta operaciones gravadas
+  576.12 // monto de la sumatoria de igv o ivap
+);
+
+debito.agrImpuestoIcbper(
+  8.00, // monto base
+  0.80 // monto de la sumatoria
+);
+
 debito.agrComprobanteRel(DocumentoRelacionado.FA_CORREGIR_RUC, 'FPR1', 1);
 
 debito.agrComprobanteDes(TipoDocumento.GRR, 'RPR1', 1);

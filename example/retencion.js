@@ -12,6 +12,7 @@ const ubl = require('../lib');
 
 const {
   CPERetencion,
+  DetalleRetencion,
 } = ubl;
 
 const regimen = new RegimenRetencion(RegimenRetencion.TASA_3);
@@ -62,27 +63,22 @@ retencion.defDireccionRec(
   'UBR. SAN RAFAEL'
 );
 
-retencion.agregarDet(
+const det01 = new DetalleRetencion(
   TipoDocumento.FA, // tipo cpe relacionado
   'F100', // serie cpe relacionado
   100, // número cpe relacionado
   '2019-09-01', // fecha emisión cpe relacionado
   1000.00, // importe total cpe relacionado
-  TipoMoneda.DOLAR, // tipo moneda cpe relacionado
-
-  '2019-09-01', // fecha pago
-  1, // número pago
-  1000.00, // importe de pago sin retención
-
-  90.00, // importe retenido
-  '2019-09-01', // fecha retención
-  2910.00, // importe total a pagar
-
-  TipoMoneda.DOLAR, // moneda de origen
-  TipoMoneda.SOL, // moneda de destino
-  3.00, // tipo de cambio
-  '2019-09-01' // fecha tipo cambio
+  TipoMoneda.DOLAR // tipo moneda cpe relacionado
 );
+
+det01.defPagoDat(1, 1000.00, '2019-09-01');
+
+det01.defRetencionDat(2910.00, 90.00, '2019-09-01');
+
+det01.definirTc(3.00, '2019-09-01');
+
+retencion.agrDetalle(det01);
 
 const xml = ubl(retencion);
 

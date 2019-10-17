@@ -12,6 +12,7 @@ const ubl = require('../lib');
 
 const {
   CPEPercepcion,
+  DetallePercepcion,
 } = ubl;
 
 const regimen = new RegimenPercepcion(RegimenPercepcion.VENTA_INTERNA);
@@ -62,27 +63,22 @@ percepcion.defDireccionRec(
   'UBR. SAN RAFAEL'
 );
 
-percepcion.agregarDet(
-  TipoDocumento.FA, // tipo cpe relacionado
-  'F100', // serie cpe relacionado
-  100, // número cpe relacionado
-  '2019-09-01', // fecha emisión cpe relacionado
-  1000.00, // importe total cpe relacionado
-  TipoMoneda.DOLAR, // tipo moneda cpe relacionado
-
-  '2019-09-01', // fecha cobro
-  1, // número cobro
-  1000.00, // importe de cobro sin percepción
-
-  60.00, // importe percibido
-  '2019-09-01', // fecha percepción
-  3060.00, // importe total a cobrar
-
-  TipoMoneda.DOLAR, // moneda de origen
-  TipoMoneda.SOL, // moneda de destino
-  3.00, // tipo de cambio
-  '2019-09-01' // fecha tipo cambio
+const det01 = new DetallePercepcion(
+  TipoDocumento.FA,
+  'F100',
+  100,
+  '2019-09-01',
+  1000.00,
+  TipoMoneda.DOLAR
 );
+
+det01.defCobroDat(1, 1000.00, '2019-09-01');
+
+det01.defPercepcionDat(3060.00, 60.00, '2019-09-01');
+
+det01.definirTc(3.00, '2019-09-01');
+
+percepcion.agrDetalle(det01);
 
 const xml = ubl(percepcion);
 
