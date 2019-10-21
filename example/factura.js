@@ -29,6 +29,8 @@ const factura = new CPEFactura(
   TipoMoneda.SOL // tipo de moneda
 );
 
+factura.defFirmante('6', '20600543050', 'FACTURACTIVA DEL PERU S.A.C. - FACTURACTIVA S.A.C.');
+
 factura.defEmisor(
   TipoDocumentoIdentidad.RUC,
   '20600543050',

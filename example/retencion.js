@@ -25,6 +25,8 @@ const retencion = new CPERetencion(
   '10:30:00'
 );
 
+retencion.defFirmante('6', '20600543050', 'FACTURACTIVA DEL PERU S.A.C. - FACTURACTIVA S.A.C.');
+
 retencion.defTasaRegimen(regimen.tasa());
 
 retencion.defObservacion('Periodo 201909');

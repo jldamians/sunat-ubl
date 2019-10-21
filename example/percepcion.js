@@ -25,6 +25,8 @@ const percepcion = new CPEPercepcion(
   '10:30:00'
 );
 
+percepcion.defFirmante('6', '20600543050', 'FACTURACTIVA DEL PERU S.A.C. - FACTURACTIVA S.A.C.');
+
 percepcion.defTasaRegimen(regimen.tasa());
 
 percepcion.defObservacion('Periodo 201909');

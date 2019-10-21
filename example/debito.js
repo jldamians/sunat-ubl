@@ -24,6 +24,8 @@ const debito = new CPENotaDebito(
   TipoMoneda.SOL
 );
 
+debito.defFirmante('6', '20600543050', 'FACTURACTIVA DEL PERU S.A.C. - FACTURACTIVA S.A.C.');
+
 debito.defSustento('ANULACION DE LA OPERACION');
 
 debito.defEmisor(
